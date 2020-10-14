@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		444287302536A45E00814B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442872F2536A45E00814B37 /* AppDelegate.swift */; };
 		444287322536A45E00814B37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287312536A45E00814B37 /* SceneDelegate.swift */; };
-		444287342536A45E00814B37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287332536A45E00814B37 /* ViewController.swift */; };
 		444287372536A45E00814B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444287352536A45E00814B37 /* Main.storyboard */; };
 		4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 444287382536A45E00814B37 /* WaterMyPlants.xcdatamodeld */; };
 		4442873C2536A46400814B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4442873B2536A46400814B37 /* Assets.xcassets */; };
@@ -39,7 +38,6 @@
 		4442872C2536A45E00814B37 /* WaterMyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4442872F2536A45E00814B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		444287312536A45E00814B37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		444287332536A45E00814B37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		444287362536A45E00814B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		444287392536A45E00814B37 /* WaterMyPlants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WaterMyPlants.xcdatamodel; sourceTree = "<group>"; };
 		4442873B2536A46400814B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,9 +99,9 @@
 		4442872E2536A45E00814B37 /* WaterMyPlants */ = {
 			isa = PBXGroup;
 			children = (
+				E43F94282536A927006972A7 /* View Controllers */,
 				4442872F2536A45E00814B37 /* AppDelegate.swift */,
 				444287312536A45E00814B37 /* SceneDelegate.swift */,
-				444287332536A45E00814B37 /* ViewController.swift */,
 				444287352536A45E00814B37 /* Main.storyboard */,
 				4442873B2536A46400814B37 /* Assets.xcassets */,
 				4442873D2536A46400814B37 /* LaunchScreen.storyboard */,
@@ -129,6 +127,13 @@
 				444287562536A46500814B37 /* Info.plist */,
 			);
 			path = WaterMyPlantsUITests;
+			sourceTree = "<group>";
+		};
+		E43F94282536A927006972A7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +267,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				444287342536A45E00814B37 /* ViewController.swift in Sources */,
 				4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */,
 				444287302536A45E00814B37 /* AppDelegate.swift in Sources */,
 				444287322536A45E00814B37 /* SceneDelegate.swift in Sources */,
