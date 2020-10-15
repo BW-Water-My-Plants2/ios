@@ -16,6 +16,9 @@
 		4442874A2536A46500814B37 /* WaterMyPlantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287492536A46500814B37 /* WaterMyPlantsTests.swift */; };
 		444287552536A46500814B37 /* WaterMyPlantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287542536A46500814B37 /* WaterMyPlantsUITests.swift */; };
 		444287632536AC0100814B37 /* PlantsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287622536AC0100814B37 /* PlantsCollectionViewController.swift */; };
+		E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */; };
+		E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F943C2537F165006972A7 /* AddPlantsViewController.swift */; };
+		E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94412537F220006972A7 /* WaterTimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		444287542536A46500814B37 /* WaterMyPlantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMyPlantsUITests.swift; sourceTree = "<group>"; };
 		444287562536A46500814B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		444287622536AC0100814B37 /* PlantsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantsCollectionViewController.swift; path = WaterMyPlants/PlantsCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailViewController.swift; sourceTree = "<group>"; };
+		E43F943C2537F165006972A7 /* AddPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsViewController.swift; sourceTree = "<group>"; };
+		E43F94412537F220006972A7 /* WaterTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,8 @@
 		4442872E2536A45E00814B37 /* WaterMyPlants */ = {
 			isa = PBXGroup;
 			children = (
+				E43F94332537DF37006972A7 /* Controllers */,
+				E43F94322537DEE8006972A7 /* Model */,
 				E43F94282536A927006972A7 /* View Controllers */,
 				4442872F2536A45E00814B37 /* AppDelegate.swift */,
 				444287312536A45E00814B37 /* SceneDelegate.swift */,
@@ -135,8 +143,25 @@
 			isa = PBXGroup;
 			children = (
 				444287622536AC0100814B37 /* PlantsCollectionViewController.swift */,
+				E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */,
+				E43F943C2537F165006972A7 /* AddPlantsViewController.swift */,
+				E43F94412537F220006972A7 /* WaterTimerViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E43F94322537DEE8006972A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E43F94332537DF37006972A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */,
 				444287632536AC0100814B37 /* PlantsCollectionViewController.swift in Sources */,
+				E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */,
 				4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */,
 				444287302536A45E00814B37 /* AppDelegate.swift in Sources */,
+				E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */,
 				444287322536A45E00814B37 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
