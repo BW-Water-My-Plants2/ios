@@ -16,6 +16,7 @@
 		4442874A2536A46500814B37 /* WaterMyPlantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287492536A46500814B37 /* WaterMyPlantsTests.swift */; };
 		444287552536A46500814B37 /* WaterMyPlantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287542536A46500814B37 /* WaterMyPlantsUITests.swift */; };
 		444287632536AC0100814B37 /* PlantsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287622536AC0100814B37 /* PlantsCollectionViewController.swift */; };
+		449A75962537FCBB00825F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A75952537FCBB00825F2B /* LoginViewController.swift */; };
 		E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */; };
 		E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F943C2537F165006972A7 /* AddPlantsViewController.swift */; };
 		E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94412537F220006972A7 /* WaterTimerViewController.swift */; };
@@ -54,6 +55,7 @@
 		444287542536A46500814B37 /* WaterMyPlantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMyPlantsUITests.swift; sourceTree = "<group>"; };
 		444287562536A46500814B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		444287622536AC0100814B37 /* PlantsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantsCollectionViewController.swift; path = WaterMyPlants/PlantsCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		449A75952537FCBB00825F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailViewController.swift; sourceTree = "<group>"; };
 		E43F943C2537F165006972A7 /* AddPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsViewController.swift; sourceTree = "<group>"; };
 		E43F94412537F220006972A7 /* WaterTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTimerViewController.swift; sourceTree = "<group>"; };
@@ -142,9 +144,10 @@
 		E43F94282536A927006972A7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E43F943C2537F165006972A7 /* AddPlantsViewController.swift */,
+				449A75952537FCBB00825F2B /* LoginViewController.swift */,
 				444287622536AC0100814B37 /* PlantsCollectionViewController.swift */,
 				E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */,
-				E43F943C2537F165006972A7 /* AddPlantsViewController.swift */,
 				E43F94412537F220006972A7 /* WaterTimerViewController.swift */,
 			);
 			path = "View Controllers";
@@ -299,6 +302,7 @@
 				444287632536AC0100814B37 /* PlantsCollectionViewController.swift in Sources */,
 				E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */,
 				4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */,
+				449A75962537FCBB00825F2B /* LoginViewController.swift in Sources */,
 				444287302536A45E00814B37 /* AppDelegate.swift in Sources */,
 				E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */,
 				444287322536A45E00814B37 /* SceneDelegate.swift in Sources */,
