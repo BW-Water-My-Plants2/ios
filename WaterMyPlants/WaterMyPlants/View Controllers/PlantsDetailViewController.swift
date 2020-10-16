@@ -16,15 +16,25 @@ class PlantsDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    func updateViews() {
+       }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddWaterTimerSegue" {
+            guard let timerVC = segue.destination as? WaterTimerViewController else { return }
+            timerVC.popoverPresentationController?.delegate = self
+            timerVC.presentationController?.delegate = self
+        }
     }
-    */
+}
 
+extension PlantsDetailViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+}
+extension PlantsDetailViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        updateViews()
+    }
 }
