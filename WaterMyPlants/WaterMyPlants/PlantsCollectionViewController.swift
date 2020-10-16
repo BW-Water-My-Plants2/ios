@@ -24,15 +24,21 @@ class PlantsCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    func updateViews() {
+        collectionView.reloadData()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddWaterTimerSegue" {
+            guard let timerVC = segue.destination as? WaterTimerViewController else { return }
+            timerVC.popoverPresentationController?.delegate = self
+            timerVC.presentationController?.delegate = self
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -86,4 +92,14 @@ class PlantsCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+extension PlantsCollectionViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+}
+extension PlantsCollectionViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        updateViews()
+    }
 }

@@ -13,5 +13,6 @@ struct PlantRepresentation: Codable {
     var name: String
     var nickName: String
     var type: String
-    var frequency: Int16
+    var notes: String
+    var frequency: Int?
 }

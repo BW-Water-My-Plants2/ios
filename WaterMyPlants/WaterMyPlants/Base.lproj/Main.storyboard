@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hJt-nA-8bv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hJt-nA-8bv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,16 +103,16 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JC7-2g-TJg">
                                         <rect key="frame" x="0.0" y="0.5" width="272" height="299"/>
-                                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="301" id="L0M-iE-Ebn"/>
                                             <constraint firstAttribute="width" constant="272" id="fUG-Ja-EEq"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv8-hT-nAR">
-                                        <rect key="frame" x="54.5" y="301" width="163" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv8-hT-nAR">
+                                        <rect key="frame" x="55" y="301" width="162" height="30"/>
                                         <state key="normal" title="Add Photo of your plant">
-                                            <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -121,7 +123,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="159" id="zmz-NR-sWC"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -152,18 +154,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="144" translatesAutoresizingMaskIntoConstraints="NO" id="37o-ZW-lKe">
-                                        <rect key="frame" x="0.0" y="136" width="304" height="30"/>
+                                        <rect key="frame" x="0.0" y="136" width="303.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgz-DN-LVH">
-                                                <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-gl-cwy">
-                                                <rect key="frame" x="193" y="0.0" width="111" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-gl-cwy">
+                                                <rect key="frame" x="192.5" y="0.0" width="111" height="30"/>
                                                 <state key="normal" title="Set Water Timer">
-                                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="systemGreenColor"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="DI2-YG-J1H" kind="popoverPresentation" identifier="AddWaterTimerSegue" popoverAnchorView="ZgR-gl-cwy" id="Xsi-gV-Z8M">
@@ -181,6 +183,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="k9E-Ki-cQj"/>
                         <color key="backgroundColor" red="0.94268471002578735" green="0.92806857824325562" blue="0.7602992057800293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MCO-lY-So0" firstAttribute="top" secondItem="k26-Vp-qdv" secondAttribute="bottom" constant="16" id="7id-j6-4mo"/>
@@ -193,7 +196,6 @@
                             <constraint firstItem="MCO-lY-So0" firstAttribute="leading" secondItem="k9E-Ki-cQj" secondAttribute="leading" constant="20" id="fyo-J7-YdK"/>
                             <constraint firstItem="k26-Vp-qdv" firstAttribute="leading" secondItem="k9E-Ki-cQj" secondAttribute="leading" constant="71" id="goP-dP-ekN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="k9E-Ki-cQj"/>
                     </view>
                     <navigationItem key="navigationItem" id="zed-fg-q6l">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Aid-1J-d0e"/>
@@ -217,10 +219,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7AC-ZU-P5D">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="296"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-Hv-ikX">
-                                        <rect key="frame" x="54.5" y="304" width="163" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-Hv-ikX">
+                                        <rect key="frame" x="55" y="304" width="162" height="33"/>
                                         <state key="normal" title="Add Photo of your plant">
-                                            <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -236,7 +238,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="143" id="rIj-ph-5ga"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -267,18 +269,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="134" translatesAutoresizingMaskIntoConstraints="NO" id="4Df-f2-cCE">
-                                        <rect key="frame" x="40" y="126" width="294" height="30"/>
+                                        <rect key="frame" x="40.5" y="126" width="293.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea1-bj-Kge">
-                                                <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQM-yH-yI3">
-                                                <rect key="frame" x="183" y="0.0" width="111" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQM-yH-yI3">
+                                                <rect key="frame" x="182.5" y="0.0" width="111" height="30"/>
                                                 <state key="normal" title="Set Water Timer">
-                                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="systemGreenColor"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="DI2-YG-J1H" kind="popoverPresentation" identifier="UpdateWaterTimer" popoverAnchorView="TQM-yH-yI3" id="VOc-GW-8K4">
@@ -296,6 +298,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="xDk-2o-V8n"/>
                         <color key="backgroundColor" red="0.94268471002578735" green="0.92806857824325562" blue="0.7602992057800293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xDk-2o-V8n" firstAttribute="trailing" secondItem="vGB-Ya-mio" secondAttribute="trailing" constant="20" id="AaU-3N-bTw"/>
@@ -309,7 +312,6 @@
                             <constraint firstItem="xDk-2o-V8n" firstAttribute="bottom" secondItem="vGB-Ya-mio" secondAttribute="bottom" constant="31" id="rJU-se-aoS"/>
                             <constraint firstItem="xDk-2o-V8n" firstAttribute="trailing" secondItem="1IO-ss-3kN" secondAttribute="trailing" constant="71" id="yDU-SD-W9X"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xDk-2o-V8n"/>
                     </view>
                     <navigationItem key="navigationItem" id="ODD-Ce-FYT">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="WKz-6q-8AC"/>
@@ -331,12 +333,12 @@
                                 <rect key="frame" x="47" y="119" width="320" height="162"/>
                             </pickerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="wWA-u6-D5f"/>
                         <color key="backgroundColor" red="0.94268471002578735" green="0.92806857824325562" blue="0.7602992057800293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gKH-QX-eUz" firstAttribute="centerX" secondItem="CWc-WS-r0A" secondAttribute="centerX" id="1yk-f0-7hA"/>
                             <constraint firstItem="gKH-QX-eUz" firstAttribute="centerY" secondItem="CWc-WS-r0A" secondAttribute="centerY" id="hA4-Zz-OzW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wWA-u6-D5f"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="400"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -386,10 +388,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoB-lM-Hol">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoB-lM-Hol">
                                         <rect key="frame" x="78" y="126" width="54" height="30"/>
                                         <state key="normal" title="Sign Up">
-                                            <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -406,6 +408,7 @@
                                 <rect key="frame" x="131" y="54" width="152" height="250"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="mdQ-Or-bZ6"/>
                         <color key="backgroundColor" red="0.94268471002578735" green="0.92806857824325562" blue="0.7602992057800293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="M0T-NY-BZR" firstAttribute="centerX" secondItem="8s7-23-XyY" secondAttribute="centerX" id="6ba-Q6-V2x"/>
@@ -418,7 +421,6 @@
                             <constraint firstItem="M0T-NY-BZR" firstAttribute="top" secondItem="mdQ-Or-bZ6" secondAttribute="top" constant="304" id="hNB-8Y-NXO"/>
                             <constraint firstItem="M0T-NY-BZR" firstAttribute="top" secondItem="CEh-IG-lPt" secondAttribute="bottom" id="ic9-JT-QAN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mdQ-Or-bZ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="WaZ-J6-nqt"/>
                 </viewController>
@@ -450,6 +452,12 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo-Green" width="250" height="250"/>
-        <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
