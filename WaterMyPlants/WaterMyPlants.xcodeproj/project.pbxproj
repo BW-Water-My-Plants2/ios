@@ -20,6 +20,11 @@
 		E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */; };
 		E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F943C2537F165006972A7 /* AddPlantsViewController.swift */; };
 		E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94412537F220006972A7 /* WaterTimerViewController.swift */; };
+		E43F944A25392E7B006972A7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F944925392E7B006972A7 /* CoreDataStack.swift */; };
+		E43F946325393226006972A7 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F946225393226006972A7 /* User+Convenience.swift */; };
+		E43F946B25393265006972A7 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F946A25393265006972A7 /* UserRepresentation.swift */; };
+		E43F94702539353E006972A7 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F946F2539353E006972A7 /* PlantRepresentation.swift */; };
+		E43F947525393609006972A7 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F947425393609006972A7 /* Plant+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailViewController.swift; sourceTree = "<group>"; };
 		E43F943C2537F165006972A7 /* AddPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsViewController.swift; sourceTree = "<group>"; };
 		E43F94412537F220006972A7 /* WaterTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTimerViewController.swift; sourceTree = "<group>"; };
+		E43F944925392E7B006972A7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E43F946225393226006972A7 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		E43F946A25393265006972A7 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		E43F946F2539353E006972A7 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
+		E43F947425393609006972A7 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +128,6 @@
 				4442873B2536A46400814B37 /* Assets.xcassets */,
 				4442873D2536A46400814B37 /* LaunchScreen.storyboard */,
 				444287402536A46400814B37 /* Info.plist */,
-				444287382536A45E00814B37 /* WaterMyPlants.xcdatamodeld */,
 			);
 			path = WaterMyPlants;
 			sourceTree = "<group>";
@@ -156,6 +165,12 @@
 		E43F94322537DEE8006972A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E43F944925392E7B006972A7 /* CoreDataStack.swift */,
+				444287382536A45E00814B37 /* WaterMyPlants.xcdatamodeld */,
+				E43F946225393226006972A7 /* User+Convenience.swift */,
+				E43F946A25393265006972A7 /* UserRepresentation.swift */,
+				E43F946F2539353E006972A7 /* PlantRepresentation.swift */,
+				E43F947425393609006972A7 /* Plant+Convenience.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,11 +315,16 @@
 			files = (
 				E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */,
 				444287632536AC0100814B37 /* PlantsCollectionViewController.swift in Sources */,
+				E43F947525393609006972A7 /* Plant+Convenience.swift in Sources */,
 				E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */,
+				E43F944A25392E7B006972A7 /* CoreDataStack.swift in Sources */,
 				4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */,
 				449A75962537FCBB00825F2B /* LoginViewController.swift in Sources */,
 				444287302536A45E00814B37 /* AppDelegate.swift in Sources */,
+				E43F946325393226006972A7 /* User+Convenience.swift in Sources */,
+				E43F946B25393265006972A7 /* UserRepresentation.swift in Sources */,
 				E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */,
+				E43F94702539353E006972A7 /* PlantRepresentation.swift in Sources */,
 				444287322536A45E00814B37 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
