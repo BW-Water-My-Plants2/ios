@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class PlantsCollectionViewController: UICollectionViewController {
 
+    let loginController = LoginController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,15 @@ class PlantsCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           
+           // transition to login view if conditions require
+           if loginController.bearer == nil {
+               performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+           }
+       }
 
     func updateViews() {
         collectionView.reloadData()
@@ -30,15 +41,7 @@ class PlantsCollectionViewController: UICollectionViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddWaterTimerSegue" {
-            guard let timerVC = segue.destination as? WaterTimerViewController else { return }
-            timerVC.popoverPresentationController?.delegate = self
-            timerVC.presentationController?.delegate = self
-        }
-    }
-    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation    
 
     // MARK: UICollectionViewDataSource
 
@@ -59,6 +62,25 @@ class PlantsCollectionViewController: UICollectionViewController {
         // Configure the cell
     
         return cell
+    }
+    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.identifier == "PlantDetailSegue",
+//                let detailVC = segue.destination as? PlantDetailViewController {
+//                    if let indexPath = tableView.indexPathForSelectedRow {
+//                        detailVC.animalName = animalNames[indexPath.row]
+//                    }
+//                    detailVC.loginController = loginController
+//                }
+          if segue.identifier == "LoginViewModalSegue" {
+                // inject dependencies login view controller cannot work without dependency. use bearer token.
+                if let loginVC = segue.destination as? LoginViewController {
+                    loginVC.loginController = loginController
+                }
+                else {
+                    print("oops")
+            }
+        }
     }
 
     // MARK: UICollectionViewDelegate
@@ -92,14 +114,4 @@ class PlantsCollectionViewController: UICollectionViewController {
     }
     */
 
-}
-extension PlantsCollectionViewController: UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-}
-extension PlantsCollectionViewController: UIAdaptivePresentationControllerDelegate {
-    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
-        updateViews()
-    }
 }
