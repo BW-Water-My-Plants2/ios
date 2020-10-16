@@ -83,7 +83,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="P4J-IU-zal" kind="presentation" id="tNS-kL-uO6"/>
+                        <segue destination="P4J-IU-zal" kind="presentation" identifier="LoginViewModalSegue" id="tNS-kL-uO6"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dj9-W8-cij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -393,6 +393,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="P4J-IU-zal" eventType="touchUpInside" id="Zec-02-wEO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -403,6 +406,9 @@
                                     <segment title="Sign In"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.42043802299999999" green="0.78039215689999997" blue="0.47752195809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="signInTypeChanged:" destination="P4J-IU-zal" eventType="valueChanged" id="pid-Y2-Btk"/>
+                                </connections>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-Green" translatesAutoresizingMaskIntoConstraints="NO" id="CEh-IG-lPt">
                                 <rect key="frame" x="131" y="54" width="152" height="250"/>
@@ -423,6 +429,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WaZ-J6-nqt"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="If4-a3-pjj" id="LLf-YE-cVx"/>
+                        <outlet property="passwordTextField" destination="FjE-lD-dAZ" id="YyJ-pj-9wq"/>
+                        <outlet property="signInSignUpSegmentedControl" destination="M0T-NY-BZR" id="3bv-ee-oBW"/>
+                        <outlet property="signUpButton" destination="KoB-lM-Hol" id="EAR-rL-kxP"/>
+                        <outlet property="usernameTextField" destination="gnL-Gb-kJe" id="Kub-AV-SEI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaJ-ub-3xM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
