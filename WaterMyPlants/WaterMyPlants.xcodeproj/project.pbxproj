@@ -26,6 +26,7 @@
 		E43F946B25393265006972A7 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F946A25393265006972A7 /* UserRepresentation.swift */; };
 		E43F94702539353E006972A7 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F946F2539353E006972A7 /* PlantRepresentation.swift */; };
 		E43F947525393609006972A7 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F947425393609006972A7 /* Plant+Convenience.swift */; };
+		E4A6515B253AADE20027640A /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6515A253AADE20027640A /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		E43F946A25393265006972A7 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		E43F946F2539353E006972A7 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
 		E43F947425393609006972A7 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
+		E4A6515A253AADE20027640A /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				449A759725394BD400825F2B /* LoginController.swift */,
+				E4A6515A253AADE20027640A /* NetworkController.swift */,
 				449A759925394CB100825F2B /* Bearer.swift */,
 			);
 			path = Controllers;
@@ -321,6 +324,7 @@
 				E43F947525393609006972A7 /* Plant+Convenience.swift in Sources */,
 				E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */,
 				E43F944A25392E7B006972A7 /* CoreDataStack.swift in Sources */,
+				E4A6515B253AADE20027640A /* NetworkController.swift in Sources */,
 				4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */,
 				449A75962537FCBB00825F2B /* LoginViewController.swift in Sources */,
 				444287302536A45E00814B37 /* AppDelegate.swift in Sources */,

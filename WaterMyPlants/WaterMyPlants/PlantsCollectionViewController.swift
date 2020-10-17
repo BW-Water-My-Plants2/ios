@@ -13,17 +13,14 @@ private let reuseIdentifier = "Cell"
 class PlantsCollectionViewController: UICollectionViewController {
 
     let loginController = LoginController()
+    var user: UserRepresentation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
+       // guard let user = user else {return}
+        
+      //  title = "Hi \(user.username)"
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,9 +54,9 @@ class PlantsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantCell", for: indexPath)
     
-        // Configure the cell
+       
     
         return cell
     }
