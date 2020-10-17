@@ -10,21 +10,46 @@ import UIKit
 
 class WaterTimerViewController: UIViewController {
 
+    //MARK: - IBOutlets -
+    @IBOutlet weak var waterFrequency: UIPickerView!
+    
+    //MARK: - Properties -
+    var plant: Plant?
+    var selectedTimer: String?
+    private let timers = ["Daily", "Every other day", "Weekly", "Demo"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        waterFrequency.dataSource = self
+        waterFrequency.delegate = self
+    }
+    
+    
+    @IBAction func doneTapped(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
+    }
+    
+    
+    @objc func dismissKeyboard() {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension WaterTimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return timers.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedTimer = timers[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return timers[row]
+    }
+    
+    
 }

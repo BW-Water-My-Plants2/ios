@@ -10,9 +10,8 @@ import Foundation
 
 struct PlantRepresentation: Codable {
     var identifier: UUID?
-    var name: String
     var nickName: String
-    var type: String
+    var plantClass: String
     var notes: String
     var frequency: Int?
 }

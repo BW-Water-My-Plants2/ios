@@ -13,27 +13,25 @@ extension Plant {
     //Turns CoreData managed plant object into a plantRep for changing to json and sending to server.
     var plantRep: PlantRepresentation? {
         
-        guard let nickName = nickName, let name = name, let type = type, let notes = notes
+        guard let nickName = nickName, let notes = notes, let plantClass = plantClass
         else { return nil }
         
-        return PlantRepresentation(identifier: identifier, name: name, nickName: nickName, type: type, notes: notes)
+        return PlantRepresentation(identifier: identifier, nickName: nickName, plantClass: plantClass, notes: notes, frequency: Int(frequency))
         
     }
     // Creating a new managed object in core data
     @discardableResult convenience init(nickName: String,
-                                        name: String,
                                         frequency: Int16,
                                         identifier: UUID = UUID(),
                                         notes: String,
-                                        type: String,
+                                        plantClass: String,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.nickName = nickName
-        self.name = name
         self.frequency = Int16(frequency)
         self.identifier = identifier
         self.notes = notes
-        self.type = type
+        self.plantClass = plantClass
     }
     // converting PR coming from JSON into managed object for core data
     @discardableResult convenience init?(plantRep: PlantRepresentation,
@@ -42,11 +40,10 @@ extension Plant {
         guard let identifier = plantRep.identifier else { return nil }
         
         self.init(nickName: plantRep.nickName,
-                  name: plantRep.name,
                   frequency: Int16(plantRep.frequency ?? 1),
                   identifier: identifier,
                   notes: plantRep.notes,
-                  type: plantRep.type,
+                  plantClass: plantRep.plantClass,
                   context: context )
     }
 }
