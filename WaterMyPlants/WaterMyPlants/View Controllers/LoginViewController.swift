@@ -15,17 +15,40 @@ enum LoginType {
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    //User Outlets
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInSignUpSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var showHideButton: UIImageView!
+    
+    //Password Strength Outlets
+    @IBOutlet weak var weakView: UIView!
+    @IBOutlet weak var mediumView: UIView!
+    @IBOutlet weak var strongView: UIView!
+    @IBOutlet weak var strengthLabel: UILabel!
+    
     
     var loginController: LoginController?
     var loginType = LoginType.signUp
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    @IBAction func showHideButtonTapped(_ sender: UIImageView) {
+        
+        let toggled = passwordTextField.isSecureTextEntry
+          if toggled {
+              passwordTextField.isSecureTextEntry = false
+           //   showHideButton.setImage(UIImage(named: "eyes-open.png"), for: .normal)
+          } else {
+              passwordTextField.isSecureTextEntry = true
+            //  showHideButton.setImage(UIImage(named: "eyes-closed.png"), for: .normal)
+          }
     }
     
     @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
@@ -56,7 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         if success {
                             DispatchQueue.main.async {
                                 let alertController = UIAlertController(title: "Sign Up Successful", message: "Please log in", preferredStyle: .alert)
-                                let alertAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+                                let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                                 alertController.addAction(alertAction)
                                 self.present(alertController, animated: true) {
                                     self.loginType = .signIn
@@ -93,4 +116,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    
+    
+}
+
+extension LoginViewController {
+    
+    private func updateStrengthViews() {
+        
+    }
+    
 }

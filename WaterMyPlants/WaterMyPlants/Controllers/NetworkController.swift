@@ -25,7 +25,18 @@ class PlantController {
         case otherError
     }
     
+    let fireURL = URL(string: "https://mockplantdata.firebaseio.com/")!
+    
+    
     private func getAllPlants() {
-        
+        //pulls in all data to decode users information
+    }
+    
+    private func addPlant() {
+        // adds user plants image, classification, notes, name
+    }
+    
+    private func deletePlant() {
+        // deletes users plant
     }
 }
