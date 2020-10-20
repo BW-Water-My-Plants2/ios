@@ -8,18 +8,26 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PlantCell"
 
 class PlantsCollectionViewController: UICollectionViewController {
 
     let loginController = LoginController()
     var user: UserRepresentation?
+    var plants = [PlantRepresentation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // guard let user = user else {return}
         
-      //  title = "Hi \(user.username)"
+        // MARK:- Sample Data
+        
+        let plant1 = PlantRepresentation(identifier: nil, imageName: "plant1", nickName: "plant1", plantClass: "TestClass", notes: "", frequency: 0)
+        
+        let plant2 = PlantRepresentation(identifier: nil, imageName: "birds", nickName: "BOP", plantClass: "ClassTEST", notes: "here are a few things about my plant", frequency: 0)
+        
+        plants.append(plant1)
+        plants.append(plant2)
+        
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
@@ -35,29 +43,16 @@ class PlantsCollectionViewController: UICollectionViewController {
     func updateViews() {
         collectionView.reloadData()
     }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation    
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return plants.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantCell", for: indexPath)
-    
-       
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        cell.backgroundColor = UIColor.red
         return cell
     }
     

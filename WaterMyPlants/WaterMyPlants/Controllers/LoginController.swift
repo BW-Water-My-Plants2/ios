@@ -86,7 +86,6 @@ final class LoginController {
                    }
                    guard let response = response as? HTTPURLResponse,
                        response.statusCode == 200 else {
-                           print("Sign in was successful")
                            completion(.failure(.noData))
                            return
                    }
