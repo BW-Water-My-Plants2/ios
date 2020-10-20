@@ -33,7 +33,7 @@ class PlantController {
     }
     
     private func addPlant() {
-        // adds user plants image, classification, notes, name
+        // adds user plants image, classification, notes, name when user puts done
     }
     
     private func deletePlant() {

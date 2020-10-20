@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		444287302536A45E00814B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442872F2536A45E00814B37 /* AppDelegate.swift */; };
 		444287322536A45E00814B37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444287312536A45E00814B37 /* SceneDelegate.swift */; };
-		444287372536A45E00814B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444287352536A45E00814B37 /* Main.storyboard */; };
 		4442873A2536A45E00814B37 /* WaterMyPlants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 444287382536A45E00814B37 /* WaterMyPlants.xcdatamodeld */; };
 		4442873C2536A46400814B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4442873B2536A46400814B37 /* Assets.xcassets */; };
 		4442873F2536A46400814B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4442873D2536A46400814B37 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,7 @@
 		449A759825394BD400825F2B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A759725394BD400825F2B /* LoginController.swift */; };
 		449A759A25394CB100825F2B /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A759925394CB100825F2B /* Bearer.swift */; };
 		44B27730253D2EDE0070BBDA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2772F253D2EDE0070BBDA /* SettingsViewController.swift */; };
+		44B27732253E79120070BBDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B27731253E79120070BBDA /* Main.storyboard */; };
 		E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */; };
 		E43F943D2537F165006972A7 /* AddPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F943C2537F165006972A7 /* AddPlantsViewController.swift */; };
 		E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F94412537F220006972A7 /* WaterTimerViewController.swift */; };
@@ -51,7 +51,6 @@
 		4442872C2536A45E00814B37 /* WaterMyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4442872F2536A45E00814B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		444287312536A45E00814B37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		444287362536A45E00814B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		444287392536A45E00814B37 /* WaterMyPlants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WaterMyPlants.xcdatamodel; sourceTree = "<group>"; };
 		4442873B2536A46400814B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4442873E2536A46400814B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		449A759725394BD400825F2B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		449A759925394CB100825F2B /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		44B2772F253D2EDE0070BBDA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		44B27731253E79120070BBDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailViewController.swift; sourceTree = "<group>"; };
 		E43F943C2537F165006972A7 /* AddPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsViewController.swift; sourceTree = "<group>"; };
 		E43F94412537F220006972A7 /* WaterTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTimerViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 				E43F94282536A927006972A7 /* View Controllers */,
 				4442872F2536A45E00814B37 /* AppDelegate.swift */,
 				444287312536A45E00814B37 /* SceneDelegate.swift */,
-				444287352536A45E00814B37 /* Main.storyboard */,
 				4442873B2536A46400814B37 /* Assets.xcassets */,
+				44B27731253E79120070BBDA /* Main.storyboard */,
 				4442873D2536A46400814B37 /* LaunchScreen.storyboard */,
 				444287402536A46400814B37 /* Info.plist */,
 			);
@@ -295,9 +295,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B27732253E79120070BBDA /* Main.storyboard in Resources */,
 				4442873F2536A46400814B37 /* LaunchScreen.storyboard in Resources */,
 				4442873C2536A46400814B37 /* Assets.xcassets in Resources */,
-				444287372536A45E00814B37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,14 +373,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		444287352536A45E00814B37 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				444287362536A45E00814B37 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4442873D2536A46400814B37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

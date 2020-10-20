@@ -10,6 +10,8 @@ import Foundation
 
 struct PlantRepresentation: Codable {
     var identifier: UUID?
+    //add image to core data
+    var imageName = ""
     var nickName: String
     var plantClass: String
     var notes: String
