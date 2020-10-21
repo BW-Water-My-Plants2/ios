@@ -10,6 +10,20 @@ import UIKit
 
 class AddPlantsViewController: UIViewController {
 
+    //MARK: - IBOutlets -
+    @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var plantClass: UILabel!
+    @IBOutlet weak var plantNicknameTextField: UITextField!
+    @IBOutlet weak var plantTypeTextField: UITextField!
+    @IBOutlet weak var plantNotesTextView: UITextView!
+    
+    //MARK: - IBActions -
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
