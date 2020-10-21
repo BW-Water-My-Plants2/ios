@@ -44,11 +44,12 @@ final class LoginController {
           var request = postRequest(for: signUpURL)
           
           do {
+            
               let jsonData = try JSONEncoder().encode(user)
               print(String(data:jsonData, encoding: .utf8)!)
               request.httpBody = jsonData
               
-              let task = URLSession.shared.dataTask(with: request) {  (_, response, error) in
+              let task = URLSession.shared.dataTask(with: request) {  (data, response, error) in
                   if let error = error {
                       print("Sign up failed with error: \(error)")
                       completion(.failure(.noData))
@@ -56,11 +57,18 @@ final class LoginController {
                   }
                   
                   guard let response = response as? HTTPURLResponse,
-                      response.statusCode==200 else {
+                      response.statusCode == 200 else {
+                        print("this is our error")
                           completion(.failure(.noData))
                           return
                   }
-                  
+                guard let data = data else { return }
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    
+                }
                   completion(.success(true))
                   
               }
@@ -86,6 +94,7 @@ final class LoginController {
                    }
                    guard let response = response as? HTTPURLResponse,
                        response.statusCode == 200 else {
+                    print("response code not working")
                            completion(.failure(.noData))
                            return
                    }
@@ -96,9 +105,11 @@ final class LoginController {
                    }
                    
                    do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
                        self.bearer = try JSONDecoder().decode(Bearer.self, from: data)
                        completion(.success(true))
-                       
+
                    } catch {
                        print("Error decoding bearer: \(error)")
                        completion(.failure(.noToken))

@@ -21,12 +21,7 @@ class PlantsCollectionViewController: UICollectionViewController {
         
         // MARK:- Sample Data
         
-        let plant1 = PlantRepresentation(identifier: nil, imageName: "plant1", nickName: "plant1", plantClass: "TestClass", notes: "", frequency: 0)
-        
-        let plant2 = PlantRepresentation(identifier: nil, imageName: "birds", nickName: "BOP", plantClass: "ClassTEST", notes: "here are a few things about my plant", frequency: 0)
-        
-        plants.append(plant1)
-        plants.append(plant2)
+       
         
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }

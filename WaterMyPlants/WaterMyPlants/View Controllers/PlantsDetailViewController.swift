@@ -10,6 +10,17 @@ import UIKit
 
 class PlantsDetailViewController: UIViewController {
 
+    //MARK: - IBOutlets -
+    @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var plantClassLabel: UILabel!
+    @IBOutlet weak var plantNicknameTextField: UITextField!
+    @IBOutlet weak var plantTypeTextField: UITextField!
+    @IBOutlet weak var plantNotesTextView: UITextView!
+    
+    
+    //MARK: - Properties -
+    var plant: Plant?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +29,18 @@ class PlantsDetailViewController: UIViewController {
     
     func updateViews() {
        }
+    
+    //MARK: - IBActions -
+    
+    @IBAction func addPlantImage(_ sender: Any) {
+        
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddWaterTimerSegue" {

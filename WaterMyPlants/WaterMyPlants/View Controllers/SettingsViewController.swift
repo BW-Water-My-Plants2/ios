@@ -10,6 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    //MARK: - IBActions -
+ 
+    @IBAction func darkModeEnable(_ sender: UISwitch) {
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
