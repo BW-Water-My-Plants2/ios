@@ -62,11 +62,10 @@ class PlantController {
     }
     
     private func updatePlant(with: [PlantRepresentation]) throws {
-        
-        
+       
     }
     
-    private func addPlant(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
+    func addPlant(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
         guard let uuid = plant.identifier else {
             completion(.failure(.tryAgain))
             return
@@ -99,7 +98,7 @@ class PlantController {
         }
         task.resume()
     }
-    private func deletePlant(_ plant: PlantRepresentation, completion: @escaping CompletionHandler = { _ in }) {
+    private func deletePlant(_ plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
         guard let uuid = plant.identifier else {
             completion(.failure(.tryAgain))
             return

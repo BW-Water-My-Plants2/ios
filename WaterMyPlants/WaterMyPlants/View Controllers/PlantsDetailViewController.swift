@@ -21,6 +21,7 @@ class PlantsDetailViewController: UIViewController {
     //MARK: - Properties -
     var plant: Plant?
     var currentImage: UIImage!
+    var plantController: PlantController?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class PlantsDetailViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        
         
     }
     

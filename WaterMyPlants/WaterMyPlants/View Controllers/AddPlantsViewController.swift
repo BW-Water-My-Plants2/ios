@@ -12,7 +12,8 @@ class AddPlantsViewController: UIViewController {
     
     var currentImage: UIImage!
     let waterTimer = WaterTimerViewController()
-
+    var plantController = PlantController()
+    
 
     //MARK: - IBOutlets -
     @IBOutlet weak var plantImage: UIImageView!
@@ -33,6 +34,21 @@ class AddPlantsViewController: UIViewController {
     
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        guard let nickname = plantNicknameTextField.text, !nickname.isEmpty,
+              let plantType = plantTypeTextField.text, !plantType.isEmpty,
+              let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
+        
+        let image = ""
+        
+        let plant = Plant(image: image, nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
+        plantController.addPlant(plant: plant)
+        do {
+            try CoreDataStack.shared.mainContext.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            NSLog("Error saving \(error)")
+        }
+        
     }
     
     override func viewDidLoad() {
