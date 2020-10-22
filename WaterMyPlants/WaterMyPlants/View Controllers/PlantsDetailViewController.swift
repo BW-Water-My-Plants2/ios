@@ -20,7 +20,8 @@ class PlantsDetailViewController: UIViewController {
     
     //MARK: - Properties -
     var plant: Plant?
-    
+    var currentImage: UIImage!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +34,10 @@ class PlantsDetailViewController: UIViewController {
     //MARK: - IBActions -
     
     @IBAction func addPlantImage(_ sender: Any) {
-        
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
@@ -59,5 +63,14 @@ extension PlantsDetailViewController: UIPopoverPresentationControllerDelegate {
 extension PlantsDetailViewController: UIAdaptivePresentationControllerDelegate {
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
         updateViews()
+    }
+}
+
+extension PlantsDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        plantImage.image = image
+        dismiss(animated: true)
+        currentImage = image
     }
 }
