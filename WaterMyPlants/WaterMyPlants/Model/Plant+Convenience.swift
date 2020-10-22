@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+//add image
+
 extension Plant {
     //Turns CoreData managed plant object into a plantRep for changing to json and sending to server.
     var plantRep: PlantRepresentation? {
