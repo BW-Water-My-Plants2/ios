@@ -102,7 +102,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("Error \(error)")
                     }
                 })
+               // weakView.backgroundColor =
+                // mediumView.backgroundColor =
+                // strongView.backgroundColor =
+                strengthLabel.text = ""
             case .signIn:
+                    
                 loginController?.signIn(with: user, completion: { (result) in
                     do {
                         let success = try result.get()
