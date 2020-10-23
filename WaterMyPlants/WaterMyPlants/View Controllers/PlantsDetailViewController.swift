@@ -10,7 +10,7 @@ import UIKit
 
 class PlantsDetailViewController: UIViewController {
 
-    //MARK: - IBOutlets -
+    // MARK: - IBOutlets -
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantClassLabel: UILabel!
     @IBOutlet weak var plantNicknameTextField: UITextField!
@@ -18,9 +18,10 @@ class PlantsDetailViewController: UIViewController {
     @IBOutlet weak var plantNotesTextView: UITextView!
     
     
-    //MARK: - Properties -
+    // MARK: - Properties -
     var plant: Plant?
     var currentImage: UIImage!
+    var plantController: PlantController?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class PlantsDetailViewController: UIViewController {
     func updateViews() {
        }
     
-    //MARK: - IBActions -
+    // MARK: - IBActions -
     
     @IBAction func addPlantImage(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -41,6 +42,7 @@ class PlantsDetailViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        
         
     }
     
@@ -67,7 +69,7 @@ extension PlantsDetailViewController: UIAdaptivePresentationControllerDelegate {
 }
 
 extension PlantsDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         plantImage.image = image
         dismiss(animated: true)

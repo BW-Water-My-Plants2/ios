@@ -12,9 +12,10 @@ class AddPlantsViewController: UIViewController {
     
     var currentImage: UIImage!
     let waterTimer = WaterTimerViewController()
+    var plantController = PlantController()
+    
 
-
-    //MARK: - IBOutlets -
+    // MARK: - IBOutlets -
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantClass: UILabel!
     @IBOutlet weak var plantNicknameTextField: UITextField!
@@ -22,7 +23,7 @@ class AddPlantsViewController: UIViewController {
     @IBOutlet weak var plantNotesTextView: UITextView!
     @IBOutlet weak var timerLabel: UILabel!
     
-    //MARK: - IBActions -
+    // MARK: - IBActions -
     
     @IBAction func addPhotoOfPlant(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -31,8 +32,22 @@ class AddPlantsViewController: UIViewController {
                   present(picker, animated: true)
     }
     
-    
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        guard let nickname = plantNicknameTextField.text, !nickname.isEmpty,
+              let plantType = plantTypeTextField.text, !plantType.isEmpty,
+              let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
+        
+        let image = ""
+        
+        let plant = Plant(image: image, nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
+        plantController.addPlant(plant: plant)
+        do {
+            try CoreDataStack.shared.mainContext.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            NSLog("Error saving \(error)")
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -41,7 +56,7 @@ class AddPlantsViewController: UIViewController {
     
     func updateViews() {
         timerLabel.text = waterTimer.selectedTimer
-       }
+}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddWaterTimerSegue" {

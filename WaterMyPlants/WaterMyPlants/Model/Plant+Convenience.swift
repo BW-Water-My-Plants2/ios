@@ -15,22 +15,28 @@ extension Plant {
     //Turns CoreData managed plant object into a plantRep for changing to json and sending to server.
     var plantRep: PlantRepresentation? {
         
-        guard let nickName = nickName, let notes = notes, let plantClass = plantClass
-        else { return nil }
+        guard  let notes = notes, let image = image, let nickName = nickName, let plantClass = plantClass else { return nil }
         
-        return PlantRepresentation(identifier: identifier, nickName: nickName, plantClass: plantClass, notes: notes, frequency: Int(frequency))
+        return PlantRepresentation(identifier: identifier?.uuidString ?? "",
+                                   image: image,
+                                   nickName: nickName,
+                                   plantClass: plantClass,
+                                   notes: notes,
+                                   frequency: Int16(frequency))
         
     }
     // Creating a new managed object in core data
-    @discardableResult convenience init(nickName: String,
-                                        frequency: Int16,
+    @discardableResult convenience init(image: String?,
+                                        nickName: String,
+                                        frequency: Int16?,
                                         identifier: UUID = UUID(),
-                                        notes: String,
+                                        notes: String?,
                                         plantClass: String,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
+        self.image = image
         self.nickName = nickName
-        self.frequency = Int16(frequency)
+        self.frequency = Int16(frequency ?? 1)
         self.identifier = identifier
         self.notes = notes
         self.plantClass = plantClass
@@ -39,12 +45,13 @@ extension Plant {
     @discardableResult convenience init?(plantRep: PlantRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        guard let identifier = plantRep.identifier else { return nil }
+        guard let identifier = UUID(uuidString: plantRep.identifier), let image = plantRep.image, let notes = plantRep.notes else { return nil }
         
-        self.init(nickName: plantRep.nickName,
+        self.init(image: image,
+                  nickName: plantRep.nickName,
                   frequency: Int16(plantRep.frequency ?? 1),
                   identifier: identifier,
-                  notes: plantRep.notes,
+                  notes: notes,
                   plantClass: plantRep.plantClass,
                   context: context )
     }

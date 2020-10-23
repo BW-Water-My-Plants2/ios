@@ -9,11 +9,10 @@
 import Foundation
 
 struct PlantRepresentation: Codable {
-    var identifier: UUID?
-    //add image to core data
-    var image = ""
+    var identifier: String
+    var image: String?
     var nickName: String
     var plantClass: String
-    var notes: String
-    var frequency: Int?
+    var notes: String?
+    var frequency: Int16?
 }
