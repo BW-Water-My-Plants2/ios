@@ -46,7 +46,7 @@ final class LoginController {
           do {
             
               let jsonData = try JSONEncoder().encode(user)
-              print(String(data:jsonData, encoding: .utf8)!)
+              print(String(data: jsonData, encoding: .utf8)!)
               request.httpBody = jsonData
               
               let task = URLSession.shared.dataTask(with: request) {  (data, response, error) in

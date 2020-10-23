@@ -5,6 +5,8 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - vertical_whitespace
   - line_length
   - opening_brace
+  - unused_optional_binding
+  - unused_closure_parameter
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # Find all the available rules by running: `swiftlint rules`
   - colon

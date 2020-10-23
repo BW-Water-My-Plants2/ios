@@ -29,7 +29,7 @@ class PlantController {
     }
     
     let fireURL = URL(string: "https://mockplantdata.firebaseio.com/")!
-    let baseURL = URL(string:"https://water-myplants.herokuapp.com/api/plants/:id")!
+    let baseURL = URL(string: "https://water-myplants.herokuapp.com/api/plants/:id")!
     let addPlantURL = URL(string: "https://water-myplants.herokuapp.com/api/plants")!
     
     private func getAllPlants(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
