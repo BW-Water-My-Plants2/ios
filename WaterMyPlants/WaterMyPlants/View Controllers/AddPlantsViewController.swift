@@ -80,7 +80,7 @@ extension AddPlantsViewController: UIAdaptivePresentationControllerDelegate {
 
 extension AddPlantsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         plantImage.image = image
         dismiss(animated: true)
