@@ -30,10 +30,6 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK:- Sample Data
-        
-       
-        
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
@@ -74,8 +70,7 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
                 // inject dependencies login view controller cannot work without dependency. use bearer token.
                 if let loginVC = segue.destination as? LoginViewController {
                     loginVC.loginController = loginController
-                }
-                else {
+                } else {
                     print("oops")
             }
         }
