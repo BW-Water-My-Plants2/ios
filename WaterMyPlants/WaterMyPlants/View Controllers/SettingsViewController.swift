@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    //MARK: - IBActions -
+    // MARK: - IBActions -
  
     @IBAction func darkModeEnable(_ sender: UISwitch) {
     }

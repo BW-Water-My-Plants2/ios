@@ -15,7 +15,7 @@ class AddPlantsViewController: UIViewController {
     var plantController = PlantController()
     
 
-    //MARK: - IBOutlets -
+    // MARK: - IBOutlets -
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantClass: UILabel!
     @IBOutlet weak var plantNicknameTextField: UITextField!
@@ -23,7 +23,7 @@ class AddPlantsViewController: UIViewController {
     @IBOutlet weak var plantNotesTextView: UITextView!
     @IBOutlet weak var timerLabel: UILabel!
     
-    //MARK: - IBActions -
+    // MARK: - IBActions -
     
     @IBAction func addPhotoOfPlant(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -31,7 +31,6 @@ class AddPlantsViewController: UIViewController {
                   picker.delegate = self
                   present(picker, animated: true)
     }
-    
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         guard let nickname = plantNicknameTextField.text, !nickname.isEmpty,
@@ -57,7 +56,7 @@ class AddPlantsViewController: UIViewController {
     
     func updateViews() {
         timerLabel.text = waterTimer.selectedTimer
-       }
+}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddWaterTimerSegue" {

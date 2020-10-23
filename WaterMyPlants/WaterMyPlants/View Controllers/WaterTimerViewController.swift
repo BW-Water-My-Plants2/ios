@@ -10,10 +10,10 @@ import UIKit
 
 class WaterTimerViewController: UIViewController {
 
-    //MARK: - IBOutlets -
+    // MARK: - IBOutlets -
     @IBOutlet weak var waterFrequency: UIPickerView!
     
-    //MARK: - Properties -
+    // MARK: - Properties -
     var plant: Plant?
     var selectedTimer: String?
     private let timers = ["Daily", "Every other day", "Weekly", "Demo"]
