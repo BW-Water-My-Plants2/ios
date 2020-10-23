@@ -19,33 +19,33 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		45BBC51FD4BDCD71F5AB5D8D0A7F7967 /* Pods-WaterMyPlants-WaterMyPlantsUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F529B589FEF585883100FC97CB9F623 /* Pods-WaterMyPlants-WaterMyPlantsUITests-dummy.m */; };
-		6904E113E16B80D68FFFA62CB01E6903 /* Pods-WaterMyPlants-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69C31FBEBB3CC1EE7E928BFF3B525741 /* Pods-WaterMyPlants-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7873114206450DC68DA8D17E2A91D94E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		93763F1AFB94B770808F86CFF3AF19EE /* Pods-WaterMyPlants-WaterMyPlantsUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A15EA20CF0238E679CACAA0DBEBF09C /* Pods-WaterMyPlants-WaterMyPlantsUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D276287E639C781276298AE185BCECB1 /* Pods-WaterMyPlantsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DE0F907C43403DCA60832455EE346 /* Pods-WaterMyPlantsTests-dummy.m */; };
-		E8509B2A2F5C68FCEE2FC140E7167C8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		F331F3C078B3ABDF83E0B380F9930D23 /* Pods-WaterMyPlants-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6965691FFC807F632468D9DD87BCBAE /* Pods-WaterMyPlants-dummy.m */; };
-		F42C9E35D8BD7E8E4810B507DA0EC670 /* Pods-WaterMyPlantsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CE641428E1D06657D3BD93EF6E48723 /* Pods-WaterMyPlantsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9729206DCC121EA6F27E98BF07BD0C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0E404262DD63EA4A7436904AAC403E28 /* Pods-WaterMyPlantsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DE0F907C43403DCA60832455EE346 /* Pods-WaterMyPlantsTests-dummy.m */; };
+		11190B3F6DFE96DA1BB0AE5C45A86A87 /* Pods-WaterMyPlants-WaterMyPlantsUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A15EA20CF0238E679CACAA0DBEBF09C /* Pods-WaterMyPlants-WaterMyPlantsUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C65C91CFDC7BF6B299450560BCC6CB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		4E43D621431A57BEDBFA2D00B180D41B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		8B1CB86021C3270AAD09E34B0D5EB5F9 /* Pods-WaterMyPlants-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69C31FBEBB3CC1EE7E928BFF3B525741 /* Pods-WaterMyPlants-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CBD5145C02967DF56640029A17F2D71 /* Pods-WaterMyPlants-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6965691FFC807F632468D9DD87BCBAE /* Pods-WaterMyPlants-dummy.m */; };
+		AC33A83EF4CAC46451F8A01E6D135E69 /* Pods-WaterMyPlantsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CE641428E1D06657D3BD93EF6E48723 /* Pods-WaterMyPlantsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B288B498EBDF2253050A42832C7E43D2 /* Pods-WaterMyPlants-WaterMyPlantsUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F529B589FEF585883100FC97CB9F623 /* Pods-WaterMyPlants-WaterMyPlantsUITests-dummy.m */; };
+		C5182E70193A3B5436A6CA4BA1405F39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1884FE4DC70AF27774C10F8A79FCC235 /* PBXContainerItemProxy */ = {
+		35FB47BD1B6EA660C9DADA932E3DD919 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FEE2C5D22B0ABF5BDC6FE9967F832BCB;
 			remoteInfo = "Pods-WaterMyPlants";
 		};
-		267519DAB1F3026758F945C3B15B4D3E /* PBXContainerItemProxy */ = {
+		CE23C28FD5C046D63D3990B1A5EEAFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
-		F0A64819B44FCE3AB6FE2C860DFA3AF0 /* PBXContainerItemProxy */ = {
+		CF5F76E412A1C634BBF1CC6648EE3E75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -89,27 +89,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1010BB1ECCA39AC84246273C5A78CBA4 /* Frameworks */ = {
+		49010B9E1A27C460201B3E31E2BE2C70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7873114206450DC68DA8D17E2A91D94E /* Foundation.framework in Frameworks */,
+				C5182E70193A3B5436A6CA4BA1405F39 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		33888058B3AD9030D8B577565078B1E9 /* Frameworks */ = {
+		58CFAB1433D5BABFD38681574A6549BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8509B2A2F5C68FCEE2FC140E7167C8A /* Foundation.framework in Frameworks */,
+				3C65C91CFDC7BF6B299450560BCC6CB1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56D1ADC3EDA111C45B7550EFC6D5FFCE /* Frameworks */ = {
+		F1C95A19C208ED2A9F70B505E8ECA5DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9729206DCC121EA6F27E98BF07BD0C0 /* Foundation.framework in Frameworks */,
+				4E43D621431A57BEDBFA2D00B180D41B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,27 +241,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2BC85BBA061321BC51D87305F68FEE53 /* Headers */ = {
+		205CBD4B193ACFDCB7BEB3B20C2197C0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6904E113E16B80D68FFFA62CB01E6903 /* Pods-WaterMyPlants-umbrella.h in Headers */,
+				8B1CB86021C3270AAD09E34B0D5EB5F9 /* Pods-WaterMyPlants-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E8BBB4AA4D6837388496106A4591CB7 /* Headers */ = {
+		AC26487E7F9E522471556BB0382E472F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93763F1AFB94B770808F86CFF3AF19EE /* Pods-WaterMyPlants-WaterMyPlantsUITests-umbrella.h in Headers */,
+				AC33A83EF4CAC46451F8A01E6D135E69 /* Pods-WaterMyPlantsTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F009DA8766C88508A07F2A68A585A100 /* Headers */ = {
+		D339B809FABE562D7BA54D4E4A7A186A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42C9E35D8BD7E8E4810B507DA0EC670 /* Pods-WaterMyPlantsTests-umbrella.h in Headers */,
+				11190B3F6DFE96DA1BB0AE5C45A86A87 /* Pods-WaterMyPlants-WaterMyPlantsUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,17 +270,17 @@
 /* Begin PBXNativeTarget section */
 		B15671DB94A439653812C69E5382A65A /* Pods-WaterMyPlantsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC490A788CC673FD2D326FDF27EAB223 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlantsTests" */;
+			buildConfigurationList = F998F4E5011F086338C5CA4AD4010AB1 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlantsTests" */;
 			buildPhases = (
-				F009DA8766C88508A07F2A68A585A100 /* Headers */,
-				B80A39004E7CFA6064BADD59807F1B38 /* Sources */,
-				33888058B3AD9030D8B577565078B1E9 /* Frameworks */,
-				55F76F69D64DB13A2A1D66B1C840DE51 /* Resources */,
+				AC26487E7F9E522471556BB0382E472F /* Headers */,
+				F39174835EAB8BA92708759023DD69F2 /* Sources */,
+				49010B9E1A27C460201B3E31E2BE2C70 /* Frameworks */,
+				7AD1195A26B947811B73192F2CD3150C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				024C65DBB52FC5B381C8EC9AB50E44AF /* PBXTargetDependency */,
+				D01ED0566EE18952737C20242F66381E /* PBXTargetDependency */,
 			);
 			name = "Pods-WaterMyPlantsTests";
 			productName = "Pods-WaterMyPlantsTests";
@@ -289,17 +289,17 @@
 		};
 		D66E14678261AF0FEB72C61AD5CB7D17 /* Pods-WaterMyPlants-WaterMyPlantsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 154BB617DA40002F24463228E9CAF5CE /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants-WaterMyPlantsUITests" */;
+			buildConfigurationList = E9E03A1BE0AF0201E26BAE6CA647281B /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants-WaterMyPlantsUITests" */;
 			buildPhases = (
-				3E8BBB4AA4D6837388496106A4591CB7 /* Headers */,
-				72BAB870F286E7F10EF7C35AA76D5210 /* Sources */,
-				1010BB1ECCA39AC84246273C5A78CBA4 /* Frameworks */,
-				DCBF780C9FD0EB6FB0CD4312244F74BD /* Resources */,
+				D339B809FABE562D7BA54D4E4A7A186A /* Headers */,
+				F95D613032403E6A7213F3233E21A069 /* Sources */,
+				58CFAB1433D5BABFD38681574A6549BD /* Frameworks */,
+				A6F6812FB280C2609658F6375BC01BCD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D1FDFD178E5FC79E48616BA82C5075C4 /* PBXTargetDependency */,
+				01B7AEE9A47A0A3D2F103582F35648B0 /* PBXTargetDependency */,
 			);
 			name = "Pods-WaterMyPlants-WaterMyPlantsUITests";
 			productName = "Pods-WaterMyPlants-WaterMyPlantsUITests";
@@ -308,17 +308,17 @@
 		};
 		FEE2C5D22B0ABF5BDC6FE9967F832BCB /* Pods-WaterMyPlants */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91957CFF0E518C13AF4A1B774DFAD4F2 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants" */;
+			buildConfigurationList = 7659D59E4E2BC6DC9E7A5A0F92DB6BE3 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants" */;
 			buildPhases = (
-				2BC85BBA061321BC51D87305F68FEE53 /* Headers */,
-				9E95E33C599FA3EB692D41200BDC1719 /* Sources */,
-				56D1ADC3EDA111C45B7550EFC6D5FFCE /* Frameworks */,
-				7B8D28F9840449E6A08D008C0CEBF6A5 /* Resources */,
+				205CBD4B193ACFDCB7BEB3B20C2197C0 /* Headers */,
+				E26F58897AAAEE724243FE0F5D0911FF /* Sources */,
+				F1C95A19C208ED2A9F70B505E8ECA5DA /* Frameworks */,
+				A320A4ECFFF4EAC493C402E51C51D5EB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FB26205CB80A3CE810B596EECB476E0F /* PBXTargetDependency */,
+				64C1C2DFD27448CD1DB30FAD6F15E43F /* PBXTargetDependency */,
 			);
 			name = "Pods-WaterMyPlants";
 			productName = "Pods-WaterMyPlants";
@@ -356,21 +356,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		55F76F69D64DB13A2A1D66B1C840DE51 /* Resources */ = {
+		7AD1195A26B947811B73192F2CD3150C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B8D28F9840449E6A08D008C0CEBF6A5 /* Resources */ = {
+		A320A4ECFFF4EAC493C402E51C51D5EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCBF780C9FD0EB6FB0CD4312244F74BD /* Resources */ = {
+		A6F6812FB280C2609658F6375BC01BCD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,57 +380,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		72BAB870F286E7F10EF7C35AA76D5210 /* Sources */ = {
+		E26F58897AAAEE724243FE0F5D0911FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45BBC51FD4BDCD71F5AB5D8D0A7F7967 /* Pods-WaterMyPlants-WaterMyPlantsUITests-dummy.m in Sources */,
+				9CBD5145C02967DF56640029A17F2D71 /* Pods-WaterMyPlants-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E95E33C599FA3EB692D41200BDC1719 /* Sources */ = {
+		F39174835EAB8BA92708759023DD69F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F331F3C078B3ABDF83E0B380F9930D23 /* Pods-WaterMyPlants-dummy.m in Sources */,
+				0E404262DD63EA4A7436904AAC403E28 /* Pods-WaterMyPlantsTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B80A39004E7CFA6064BADD59807F1B38 /* Sources */ = {
+		F95D613032403E6A7213F3233E21A069 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D276287E639C781276298AE185BCECB1 /* Pods-WaterMyPlantsTests-dummy.m in Sources */,
+				B288B498EBDF2253050A42832C7E43D2 /* Pods-WaterMyPlants-WaterMyPlantsUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		024C65DBB52FC5B381C8EC9AB50E44AF /* PBXTargetDependency */ = {
+		01B7AEE9A47A0A3D2F103582F35648B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = CF5F76E412A1C634BBF1CC6648EE3E75 /* PBXContainerItemProxy */;
+		};
+		64C1C2DFD27448CD1DB30FAD6F15E43F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = CE23C28FD5C046D63D3990B1A5EEAFF0 /* PBXContainerItemProxy */;
+		};
+		D01ED0566EE18952737C20242F66381E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-WaterMyPlants";
 			target = FEE2C5D22B0ABF5BDC6FE9967F832BCB /* Pods-WaterMyPlants */;
-			targetProxy = 1884FE4DC70AF27774C10F8A79FCC235 /* PBXContainerItemProxy */;
-		};
-		D1FDFD178E5FC79E48616BA82C5075C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = F0A64819B44FCE3AB6FE2C860DFA3AF0 /* PBXContainerItemProxy */;
-		};
-		FB26205CB80A3CE810B596EECB476E0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 267519DAB1F3026758F945C3B15B4D3E /* PBXContainerItemProxy */;
+			targetProxy = 35FB47BD1B6EA660C9DADA932E3DD919 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3FAF6330DBFD3BE8F679F4A4A0DB4959 /* Debug */ = {
+		287AD343ACDEABF666E054A74C4DF323 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1B6EA8CDA94A204EF182D2F43BDFECC /* Pods-WaterMyPlants-WaterMyPlantsUITests.debug.xcconfig */;
+			baseConfigurationReference = 987F50633CB1B687B843044E09F34E91 /* Pods-WaterMyPlants-WaterMyPlantsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -461,10 +461,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -481,6 +482,83 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		4D8494A919D20F94E61272F6D8E396B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B69C9737B3605D6A3899E04DD5BBC77 /* Pods-WaterMyPlantsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WaterMyPlantsTests/Pods-WaterMyPlantsTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WaterMyPlantsTests/Pods-WaterMyPlantsTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		553F87EB594F5C63C3218C9D7562820E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1DA9D6D3D15D8777EFFBB7F0AD7CF96 /* Pods-WaterMyPlants.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WaterMyPlants/Pods-WaterMyPlants-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WaterMyPlants/Pods-WaterMyPlants.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		55DD740115BE746C8DBB7753806D85D5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -563,9 +641,9 @@
 			};
 			name = Debug;
 		};
-		80D24B7629535F77CAA85B6655CA2F74 /* Release */ = {
+		6D15A49B86B7CC379CC8F73A1EA46FAD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 987F50633CB1B687B843044E09F34E91 /* Pods-WaterMyPlants-WaterMyPlantsUITests.release.xcconfig */;
+			baseConfigurationReference = C1B6EA8CDA94A204EF182D2F43BDFECC /* Pods-WaterMyPlants-WaterMyPlantsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -596,52 +674,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		96F40AB6F49C94A18D73E2AEB0023CB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46153BA2BE420384DAD97AB0A7AADA04 /* Pods-WaterMyPlantsTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-WaterMyPlantsTests/Pods-WaterMyPlantsTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WaterMyPlantsTests/Pods-WaterMyPlantsTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CDC3D57D76C198F3E195E25E7D3A46DC /* Debug */ = {
+		7413565BFB04B6486E7FE2DC85EFFA44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CFFF62DB0BC304A5D28EB8AC20F6B11 /* Pods-WaterMyPlants.debug.xcconfig */;
 			buildSettings = {
@@ -679,48 +717,9 @@
 			};
 			name = Debug;
 		};
-		E893B6C2BB652F24A3682ABCD5BCA1F9 /* Release */ = {
+		BBE4B2CAD0CB717E471ED1600B83DD83 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1DA9D6D3D15D8777EFFBB7F0AD7CF96 /* Pods-WaterMyPlants.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-WaterMyPlants/Pods-WaterMyPlants-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WaterMyPlants/Pods-WaterMyPlants.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EF53142A29A0D79FD03E3639867B2AFC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B69C9737B3605D6A3899E04DD5BBC77 /* Pods-WaterMyPlantsTests.debug.xcconfig */;
+			baseConfigurationReference = 46153BA2BE420384DAD97AB0A7AADA04 /* Pods-WaterMyPlantsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -751,10 +750,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		F671B4D3AA8F2CA18D12CD74BD1CDEF9 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -819,15 +819,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		154BB617DA40002F24463228E9CAF5CE /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants-WaterMyPlantsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3FAF6330DBFD3BE8F679F4A4A0DB4959 /* Debug */,
-				80D24B7629535F77CAA85B6655CA2F74 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -837,11 +828,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91957CFF0E518C13AF4A1B774DFAD4F2 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants" */ = {
+		7659D59E4E2BC6DC9E7A5A0F92DB6BE3 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDC3D57D76C198F3E195E25E7D3A46DC /* Debug */,
-				E893B6C2BB652F24A3682ABCD5BCA1F9 /* Release */,
+				7413565BFB04B6486E7FE2DC85EFFA44 /* Debug */,
+				553F87EB594F5C63C3218C9D7562820E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -855,11 +846,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC490A788CC673FD2D326FDF27EAB223 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlantsTests" */ = {
+		E9E03A1BE0AF0201E26BAE6CA647281B /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlants-WaterMyPlantsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF53142A29A0D79FD03E3639867B2AFC /* Debug */,
-				96F40AB6F49C94A18D73E2AEB0023CB0 /* Release */,
+				6D15A49B86B7CC379CC8F73A1EA46FAD /* Debug */,
+				287AD343ACDEABF666E054A74C4DF323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F998F4E5011F086338C5CA4AD4010AB1 /* Build configuration list for PBXNativeTarget "Pods-WaterMyPlantsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8494A919D20F94E61272F6D8E396B1 /* Debug */,
+				BBE4B2CAD0CB717E471ED1600B83DD83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
