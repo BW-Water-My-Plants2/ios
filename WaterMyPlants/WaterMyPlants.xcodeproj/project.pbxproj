@@ -18,6 +18,7 @@
 		449A75962537FCBB00825F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A75952537FCBB00825F2B /* LoginViewController.swift */; };
 		449A759825394BD400825F2B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A759725394BD400825F2B /* LoginController.swift */; };
 		449A759A25394CB100825F2B /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A759925394CB100825F2B /* Bearer.swift */; };
+		449E578725428A0C009666AD /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E578625428A0C009666AD /* PlantCollectionViewCell.swift */; };
 		44B27730253D2EDE0070BBDA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2772F253D2EDE0070BBDA /* SettingsViewController.swift */; };
 		44B27732253E79120070BBDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B27731253E79120070BBDA /* Main.storyboard */; };
 		5EA19917B0D11784FC42062D /* Pods_WaterMyPlants_WaterMyPlantsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743FCE20EDC9C8596A557435 /* Pods_WaterMyPlants_WaterMyPlantsUITests.framework */; };
@@ -70,6 +71,7 @@
 		449A75952537FCBB00825F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		449A759725394BD400825F2B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		449A759925394CB100825F2B /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		449E578625428A0C009666AD /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewCell.swift; sourceTree = "<group>"; };
 		44B2772F253D2EDE0070BBDA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44B27731253E79120070BBDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		530C2328B2CE4049A23CD730 /* Pods-WaterMyPlants.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterMyPlants.debug.xcconfig"; path = "Target Support Files/Pods-WaterMyPlants/Pods-WaterMyPlants.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				E43F943C2537F165006972A7 /* AddPlantsViewController.swift */,
 				449A75952537FCBB00825F2B /* LoginViewController.swift */,
+				449E578625428A0C009666AD /* PlantCollectionViewCell.swift */,
 				444287622536AC0100814B37 /* PlantsCollectionViewController.swift */,
 				E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */,
 				E43F94412537F220006972A7 /* WaterTimerViewController.swift */,
@@ -454,6 +457,7 @@
 			files = (
 				E43F94422537F220006972A7 /* WaterTimerViewController.swift in Sources */,
 				444287632536AC0100814B37 /* PlantsCollectionViewController.swift in Sources */,
+				449E578725428A0C009666AD /* PlantCollectionViewCell.swift in Sources */,
 				E43F947525393609006972A7 /* Plant+Convenience.swift in Sources */,
 				E43F94382537F14C006972A7 /* PlantsDetailViewController.swift in Sources */,
 				E43F944A25392E7B006972A7 /* CoreDataStack.swift in Sources */,
