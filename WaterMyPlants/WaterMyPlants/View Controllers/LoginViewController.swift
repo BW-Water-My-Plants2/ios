@@ -35,6 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var loginType = LoginType.signUp
     
     //Colors
+    let bgColor = UIColor(named: "bgColor")
     private let unusedColor = UIColor.gray
     private let weakColor = UIColor.red
     private let mediumColor = UIColor.yellow
@@ -102,9 +103,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("Error \(error)")
                     }
                 })
-               // weakView.backgroundColor =
-                // mediumView.backgroundColor =
-                // strongView.backgroundColor =
+                weakView.backgroundColor = bgColor
+                mediumView.backgroundColor = bgColor
+                strongView.backgroundColor = bgColor
                 strengthLabel.text = ""
             case .signIn:
                     
