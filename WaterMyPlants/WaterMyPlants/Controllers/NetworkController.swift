@@ -28,14 +28,22 @@ class PlantController {
         case otherError
     }
     
+    var plants = [PlantRepresentation]()
+    
     let fireURL = URL(string: "https://mockplantdata.firebaseio.com/")!
     let baseURL = URL(string: "https://water-myplants.herokuapp.com/api/plants/:id")!
     let addPlantURL = URL(string: "https://water-myplants.herokuapp.com/api/plants")!
     
-    private func getAllPlants(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
-        guard let _ = plant.identifier else { fatalError() }
+    init() {
+        getAllPlants()
+    }
+    
+    func getAllPlants(completion: @escaping CompletionHandler = { _ in }) {
+      //  guard let _ = Plant.identifier else { fatalError() }
         
         let requestURL = fireURL.appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error {
@@ -43,13 +51,14 @@ class PlantController {
                 completion(.failure(.otherError))
                 return
             }
-            //pulls in all data to decode users information
+            
             guard let data = data else {
                 completion(.failure(.noData))
                 return
             }
             do {
                 let plantsArray = Array(try JSONDecoder().decode([String: PlantRepresentation].self, from: data).values)
+                self.plants = plantsArray
                 try self.updatePlant(with: plantsArray)
                 completion(.success(true))
             } catch {
@@ -100,7 +109,7 @@ class PlantController {
         }
         task.resume()
     }
-    private func deletePlant(_ plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
+    func deletePlant(_ plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
         guard let uuid = plant.identifier else {
             completion(.failure(.tryAgain))
             return

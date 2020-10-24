@@ -9,7 +9,7 @@
 import UIKit
 
 class PlantsDetailViewController: UIViewController {
-
+    
     // MARK: - IBOutlets -
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantClassLabel: UILabel!
@@ -19,18 +19,19 @@ class PlantsDetailViewController: UIViewController {
     
     
     // MARK: - Properties -
-    var plant: Plant?
+    var plants: PlantRepresentation?
     var currentImage: UIImage!
-    var plantController: PlantController?
-        
+    var plantController = PlantController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
     func updateViews() {
-       }
+        plantClassLabel.text = plants?.plantClass
+    }
     
     // MARK: - IBActions -
     
@@ -42,7 +43,21 @@ class PlantsDetailViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        guard let nickname = plantNicknameTextField.text, !nickname.isEmpty,
+            let plantType = plantTypeTextField.text, !plantType.isEmpty,
+            let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
         
+        let image = "\(currentImage!)"
+        
+        let plant = Plant(image: image, nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
+        plantController.addPlant(plant: plant)
+        
+        do {
+            try CoreDataStack.shared.mainContext.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            NSLog("Error saving \(error)")
+        }
         
     }
     

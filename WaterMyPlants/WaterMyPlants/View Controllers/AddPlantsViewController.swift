@@ -11,13 +11,13 @@ import UIKit
 class AddPlantsViewController: UIViewController {
     
     var currentImage: UIImage!
+    
     let waterTimer = WaterTimerViewController()
     var plantController = PlantController()
     
 
     // MARK: - IBOutlets -
     @IBOutlet weak var plantImage: UIImageView!
-    @IBOutlet weak var plantClass: UILabel!
     @IBOutlet weak var plantNicknameTextField: UITextField!
     @IBOutlet weak var plantTypeTextField: UITextField!
     @IBOutlet weak var plantNotesTextView: UITextView!
@@ -37,7 +37,7 @@ class AddPlantsViewController: UIViewController {
               let plantType = plantTypeTextField.text, !plantType.isEmpty,
               let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
         
-        let image = ""
+        let image = "\(currentImage!)"
         
         let plant = Plant(image: image, nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
         plantController.addPlant(plant: plant)
