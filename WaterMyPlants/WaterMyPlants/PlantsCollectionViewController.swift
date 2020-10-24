@@ -13,14 +13,16 @@ import Foundation
 class PlantsCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
-        let request: NSFetchRequest<Plant> = Plant.fetchRequest()
+        let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "nickName", ascending: true)]
         let context = CoreDataStack.shared.mainContext
-        let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "nickName", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "nickName", cacheName: nil)
         frc.delegate = self
         try? frc.performFetch()
         return frc
     }()
-    
+
+    // MARK: - Properties -
     let loginController = LoginController()
     let plantController = PlantController()
     var user: UserRepresentation?
@@ -46,7 +48,7 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return fetchedResultsController.sections?.count ?? 1
         //return plantController.plants.count
     }
     
@@ -60,7 +62,7 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
         if segue.identifier == "PlantDetailSegue",
             let detailVC = segue.destination as? PlantsDetailViewController {
             if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                detailVC.plants = plantController.plants[indexPath.row]
+                detailVC.plantRep = plantController.plants[indexPath.row]
             }
             detailVC.plantController = plantController
         } else if segue.identifier == "LoginViewModalSegue" {

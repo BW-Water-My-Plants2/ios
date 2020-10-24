@@ -16,21 +16,55 @@ class PlantsDetailViewController: UIViewController {
     @IBOutlet weak var plantNicknameTextField: UITextField!
     @IBOutlet weak var plantTypeTextField: UITextField!
     @IBOutlet weak var plantNotesTextView: UITextView!
-    
+    @IBOutlet weak var plantTimerLabel: UILabel!
     
     // MARK: - Properties -
-    var plants: PlantRepresentation?
+    var plants: Plant?
     var currentImage: UIImage!
     var plantController = PlantController()
+    var wasEdited = false
+    var plantRep: PlantRepresentation?
+    var waterTimer: WaterTimerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        navigationItem.rightBarButtonItem = editButtonItem
         // Do any additional setup after loading the view.
     }
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        if editing { wasEdited = true }
+        plantNicknameTextField.isUserInteractionEnabled = editing
+        plantTypeTextField.isUserInteractionEnabled = editing
+        plantNotesTextView.isUserInteractionEnabled = editing
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if wasEdited {
+            guard let nickName = plantNicknameTextField.text, !nickName.isEmpty,
+                  let plant = plants else { return }
+            
+            let notes = plantNotesTextView.text
+            let plantClass = plantTypeTextField.text
+            plant.nickName = nickName
+            plant.notes = notes
+            plant.plantClass = plantClass
+            
+        }
+    }
+    
     
     func updateViews() {
         plantClassLabel.text = plants?.plantClass
+        plantNicknameTextField.text = plants?.nickName
+        plantNicknameTextField.isUserInteractionEnabled = isEditing
+        plantTypeTextField.text = plants?.plantClass
+        plantTypeTextField.isUserInteractionEnabled = isEditing
+        plantNotesTextView.text = plants?.notes
+        plantNotesTextView.isUserInteractionEnabled = isEditing
+        plantTimerLabel.text = waterTimer?.selectedTimer
     }
     
     // MARK: - IBActions -
@@ -66,8 +100,10 @@ class PlantsDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddWaterTimerSegue" {
             guard let timerVC = segue.destination as? WaterTimerViewController else { return }
-            timerVC.popoverPresentationController?.delegate = self
-            timerVC.presentationController?.delegate = self
+            timerVC.delegate = self
+            timerVC.plant = plants
+//            timerVC.popoverPresentationController?.delegate = self
+//            timerVC.presentationController?.delegate = self
         }
     }
 }
@@ -90,4 +126,11 @@ extension PlantsDetailViewController: UIImagePickerControllerDelegate, UINavigat
         dismiss(animated: true)
         currentImage = image
     }
+}
+extension PlantsDetailViewController: WaterTimerPickedDelegate {
+    func plantTimer(date: Date) {
+        
+    }
+    
+    
 }

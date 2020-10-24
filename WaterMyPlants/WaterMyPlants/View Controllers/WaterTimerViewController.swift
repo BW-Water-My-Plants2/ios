@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol WaterTimerPickedDelegate {
+    func plantTimer(date: Date)
+}
 
 class WaterTimerViewController: UIViewController {
 
@@ -14,9 +17,11 @@ class WaterTimerViewController: UIViewController {
     @IBOutlet weak var waterFrequency: UIPickerView!
     
     // MARK: - Properties -
+    
     var plant: Plant?
     var selectedTimer: String?
-    private let timers = ["Daily", "Every other day", "Weekly", "Demo"]
+    var delegate: WaterTimerPickedDelegate?
+    private let waterSchedule = ["Daily", "Every other day", "Weekly", "Demo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +29,19 @@ class WaterTimerViewController: UIViewController {
         waterFrequency.delegate = self
     }
     
-    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        //        delegate?.plantTimer(date: waterFrequency)
+//        view.endEditing(true)
+        let timer = selectedTimer
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
-        view.endEditing(true)
     }
     
     
     @objc func dismissKeyboard() {
     }
     
-
 }
 extension WaterTimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -41,15 +49,13 @@ extension WaterTimerViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return timers.count
+        return waterSchedule.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedTimer = timers[row]
+        selectedTimer = waterSchedule[row]
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return timers[row]
+        return waterSchedule[row]
     }
-    
-    
 }
