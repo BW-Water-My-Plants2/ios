@@ -202,10 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				E43F943C2537F165006972A7 /* AddPlantsViewController.swift */,
+				E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */,
 				449A75952537FCBB00825F2B /* LoginViewController.swift */,
 				449E578625428A0C009666AD /* PlantCollectionViewCell.swift */,
 				444287622536AC0100814B37 /* PlantsCollectionViewController.swift */,
-				E43F94372537F14C006972A7 /* PlantsDetailViewController.swift */,
 				E43F94412537F220006972A7 /* WaterTimerViewController.swift */,
 				44B2772F253D2EDE0070BBDA /* SettingsViewController.swift */,
 			);

@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import Foundation
 
-class PlantsCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
+class PlantsCollectionViewController: UICollectionViewController {
     
-    private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
+    private lazy var plantFRC: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "nickName", ascending: true)]
         let context = CoreDataStack.shared.mainContext
@@ -21,15 +21,25 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
         try? frc.performFetch()
         return frc
     }()
-
+    
     // MARK: - Properties -
     let loginController = LoginController()
     let plantController = PlantController()
     var user: UserRepresentation?
     var plants = [PlantRepresentation]()
+    var blockOperations: [BlockOperation] = []
+    
+    deinit {
+        for operation: BlockOperation in blockOperations {
+            operation.cancel()
+        }
+        blockOperations.removeAll(keepingCapacity: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+        //           collectionView.register(UINib(nibName: "HeaderSupplementaryView", bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: "HeaderSupplementaryView")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,13 +58,16 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedResultsController.sections?.count ?? 1
-        //return plantController.plants.count
+        return plantController.plants.count
+        // below is what is suppose to be used. Keep getting an error
+        //error is no object at index 1 in section at index 0
+        //return plantFRC.sections?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantCell", for: indexPath) as? PlantCollectionViewCell ?? PlantCollectionViewCell()
-      
+        
+        cell.plant = plantFRC.object(at: indexPath)
         return cell
     }
     
@@ -71,199 +84,136 @@ class PlantsCollectionViewController: UICollectionViewController, NSFetchedResul
             }
         }
     }
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
-    
-    //    var _fetchedResultsController: NSFetchedResultsController<Plant>? = nil
-    //        var blockOperations: [BlockOperation] = []
-    //
-    //        var fetchedResultController: NSFetchedResultsController<Plant> {
-    //            if _fetchedResultsController != nil {
-    //                return _fetchedResultsController!
-    //            }
-    //
-    //            let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
-    //            let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
-    //
-    //            fetchRequest.predicate = NSPredicate(format: "...")
-    //
-    //            // sort by item text
-    //            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "...", ascending: true)]
-    //            let resultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-    //
-    //            resultsController.delegate = self;
-    //            _fetchedResultsController = resultsController
-    //
-    //            do {
-    //                try _fetchedResultsController!.performFetch()
-    //            } catch {
-    //                let nserror = error as NSError
-    //                fatalError("Unresolved error \(nserror)")
-    //            }
-    //            return _fetchedResultsController!
-    //        }
-    //
-    //        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-    //
-    //            if type == NSFetchedResultsChangeType.insert {
-    //                print("Insert Object: \(newIndexPath)")
-    //
-    //                if (collectionView?.numberOfSections)! > 0 {
-    //
-    //                    if collectionView?.numberOfItems( inSection: newIndexPath!.section ) == 0 {
-    //                        self.shouldReloadCollectionView = true
-    //                    } else {
-    //                        blockOperations.append(
-    //                            BlockOperation(block: { [weak self] in
-    //                                if let this = self {
-    //                                    DispatchQueue.main.async {
-    //                                        this.collectionView!.insertItems(at: [newIndexPath!])
-    //                                    }
-    //                                }
-    //                                })
-    //                        )
-    //                    }
-    //
-    //                } else {
-    //                    self.shouldReloadCollectionView = true
-    //                }
-    //            }
-    //            else if type == NSFetchedResultsChangeType.update {
-    //                print("Update Object: \(indexPath)")
-    //                blockOperations.append(
-    //                    BlockOperation(block: { [weak self] in
-    //                        if let this = self {
-    //                            DispatchQueue.main.async {
-    //
-    //                                this.collectionView!.reloadItems(at: [indexPath!])
-    //                            }
-    //                        }
-    //                        })
-    //                )
-    //            }
-    //            else if type == NSFetchedResultsChangeType.move {
-    //                print("Move Object: \(indexPath)")
-    //
-    //                blockOperations.append(
-    //                    BlockOperation(block: { [weak self] in
-    //                        if let this = self {
-    //                            DispatchQueue.main.async {
-    //                                this.collectionView!.moveItem(at: indexPath!, to: newIndexPath!)
-    //                            }
-    //                        }
-    //                        })
-    //                )
-    //            }
-    //            else if type == NSFetchedResultsChangeType.delete {
-    //                print("Delete Object: \(indexPath)")
-    //                if collectionView?.numberOfItems( inSection: indexPath!.section ) == 1 {
-    //                    self.shouldReloadCollectionView = true
-    //                } else {
-    //                    blockOperations.append(
-    //                        BlockOperation(block: { [weak self] in
-    //                            if let this = self {
-    //                                DispatchQueue.main.async {
-    //                                    this.collectionView!.deleteItems(at: [indexPath!])
-    //                                }
-    //                            }
-    //                            })
-    //                    )
-    //                }
-    //            }
-    //        }
-    //
-    //        public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-    //            if type == NSFetchedResultsChangeType.insert {
-    //                print("Insert Section: \(sectionIndex)")
-    //                blockOperations.append(
-    //                    BlockOperation(block: { [weak self] in
-    //                        if let this = self {
-    //                            DispatchQueue.main.async {
-    //                                this.collectionView!.insertSections(NSIndexSet(index: sectionIndex) as IndexSet)
-    //                            }
-    //                        }
-    //                        })
-    //                )
-    //            }
-    //            else if type == NSFetchedResultsChangeType.update {
-    //                print("Update Section: \(sectionIndex)")
-    //                blockOperations.append(
-    //                    BlockOperation(block: { [weak self] in
-    //                        if let this = self {
-    //                            DispatchQueue.main.async {
-    //                                this.collectionView!.reloadSections(NSIndexSet(index: sectionIndex) as IndexSet)
-    //                            }
-    //                        }
-    //                        })
-    //                )
-    //            }
-    //            else if type == NSFetchedResultsChangeType.delete {
-    //                print("Delete Section: \(sectionIndex)")
-    //                blockOperations.append(
-    //                    BlockOperation(block: { [weak self] in
-    //                        if let this = self {
-    //                            DispatchQueue.main.async {
-    //                                this.collectionView!.deleteSections(NSIndexSet(index: sectionIndex) as IndexSet)
-    //                            }
-    //                        }
-    //                        })
-    //                )
-    //            }
-    //        }
-    //
-    //        func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    //
-    //            // Checks if we should reload the collection view to fix a bug @ http://openradar.appspot.com/12954582
-    //            if (self.shouldReloadCollectionView) {
-    //                DispatchQueue.main.async {
-    //                    self.collectionView.reloadData();
-    //                }
-    //            } else {
-    //                DispatchQueue.main.async {
-    //                    self.collectionView!.performBatchUpdates({ () -> Void in
-    //                        for operation: BlockOperation in self.blockOperations {
-    //                            operation.start()
-    //                        }
-    //                        }, completion: { (finished) -> Void in
-    //                            self.blockOperations.removeAll(keepingCapacity: false)
-    //                    })
-    //                }
-    //            }
-    //        }
-    //
-    //        deinit {
-    //            for operation: BlockOperation in blockOperations {
-    //                operation.cancel()
-    //            }
-    //            blockOperations.removeAll(keepingCapacity: false)
-    //        }
 }
+
+
+// MARK: Fetched ResultsController
+
+extension PlantsCollectionViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        if type == NSFetchedResultsChangeType.insert {
+            print("Insert Object")
+            
+            if (collectionView?.numberOfSections)! > 0 {
+                
+                if collectionView?.numberOfItems( inSection: newIndexPath!.section ) == 1 {
+                    collectionView.reloadData()
+                } else {
+                    blockOperations.append(
+                        BlockOperation(block: { [weak self] in
+                            if let this = self {
+                                DispatchQueue.main.async {
+                                    this.collectionView!.insertItems(at: [newIndexPath!])
+                                }
+                            }
+                        })
+                    )
+                }
+                
+            } else {
+                collectionView.reloadData()
+            }
+        }
+        else if type == NSFetchedResultsChangeType.update {
+            print("Update Object")
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        DispatchQueue.main.async {
+                            
+                            this.collectionView!.reloadItems(at: [indexPath!])
+                        }
+                    }
+                })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.move {
+            print("Move Object")
+            
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        DispatchQueue.main.async {
+                            this.collectionView!.moveItem(at: indexPath!, to: newIndexPath!)
+                        }
+                    }
+                })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.delete {
+            print("Delete Object")
+            if collectionView?.numberOfItems(inSection: indexPath!.section) == 1 {
+                collectionView.reloadData()
+            } else {
+                blockOperations.append(
+                    BlockOperation(block: { [weak self] in
+                        if let this = self {
+                            DispatchQueue.main.async {
+                                this.collectionView!.deleteItems(at: [indexPath!])
+                            }
+                        }
+                    })
+                )
+            }
+        }
+    }
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        if type == NSFetchedResultsChangeType.insert {
+            print("Insert Section: \(sectionIndex)")
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        DispatchQueue.main.async {
+                            this.collectionView!.insertSections(NSIndexSet(index: sectionIndex) as IndexSet)
+                        }
+                    }
+                })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.update {
+            print("Update Section: \(sectionIndex)")
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        DispatchQueue.main.async {
+                            this.collectionView!.reloadSections(NSIndexSet(index: sectionIndex) as IndexSet)
+                        }
+                    }
+                })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.delete {
+            print("Delete Section: \(sectionIndex)")
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        DispatchQueue.main.async {
+                            this.collectionView!.deleteSections(NSIndexSet(index: sectionIndex) as IndexSet)
+                        }
+                    }
+                })
+            )
+        }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        collectionView?.performBatchUpdates({ self.collectionView.map {self.performCollectionViewChange(change: $0)} }, completion: nil)
+    }
+    
+    func performCollectionViewChange(change: UICollectionView) {
+    }
+}
+
+// MARK: Section Header
+
+//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//        let kind = "Hello \(user?.username ?? "")"
+//
+//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath)
+//
+//        return headerView
+//    }

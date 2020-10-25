@@ -10,9 +10,21 @@ import UIKit
 
 class PlantCollectionViewCell: UICollectionViewCell {
     
+    var plant: Plant? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantNameLabel: UILabel!
     @IBOutlet weak var waterDropTimer: UIButton!
     
-    
+    private func updateViews() {
+           guard let plant = plant else {return}
+           
+        plantNameLabel.text = plant.nickName
+       // plantImage.image = UIImage(systemName: "birds.png")
+        
+       }
 }
