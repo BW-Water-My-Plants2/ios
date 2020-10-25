@@ -38,8 +38,8 @@ class PlantsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
-        //           collectionView.register(UINib(nibName: "HeaderSupplementaryView", bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: "HeaderSupplementaryView")
+        collectionView.reloadData()
+        collectionView.register(UINib(nibName: "Header", bundle: nil), forSupplementaryViewOfKind: "Header", withReuseIdentifier: "Header")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,18 +51,35 @@ class PlantsCollectionViewController: UICollectionViewController {
         }
     }
     
-    func updateViews() {
-        collectionView.reloadData()
-    }
+    // MARK: Section Header
+    
+//    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//
+//    switch kind {
+//
+//    case UICollectionView.elementKindSectionHeader:
+//
+//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath as IndexPath)
+//
+//        headerView.largeContentTitle = "Hello TEST \(user?.username ?? "")"
+//        headerView.backgroundColor = UIColor.blue
+//        return headerView
+//
+//    default:
+//            assert(false, "Unexpected element kind")
+//        }
+//    }
     
     // MARK: UICollectionViewDataSource
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return plantController.plants.count
-        // below is what is suppose to be used. Keep getting an error
-        //error is no object at index 1 in section at index 0
-        //return plantFRC.sections?.count ?? 0
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return plantFRC.sections?.count ?? 2
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return plantFRC.sections?[section].numberOfObjects ?? 0
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantCell", for: indexPath) as? PlantCollectionViewCell ?? PlantCollectionViewCell()
@@ -206,14 +223,5 @@ extension PlantsCollectionViewController: NSFetchedResultsControllerDelegate {
     func performCollectionViewChange(change: UICollectionView) {
     }
 }
-
-// MARK: Section Header
-
-//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//        let kind = "Hello \(user?.username ?? "")"
-//
-//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath)
-//
-//        return headerView
-//    }
+            
+            
