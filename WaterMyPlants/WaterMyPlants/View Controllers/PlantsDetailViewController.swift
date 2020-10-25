@@ -88,6 +88,8 @@ class PlantsDetailViewController: UIViewController {
         let plant = Plant(image: "birds", nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
         plantController.addPlant(plant: plant)
         
+        //this is not saving
+        
         do {
             try CoreDataStack.shared.mainContext.save()
             navigationController?.popViewController(animated: true)
@@ -96,8 +98,6 @@ class PlantsDetailViewController: UIViewController {
         }
         
     }
-    
-    
     
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.identifier == "UpdateWaterTimer" {

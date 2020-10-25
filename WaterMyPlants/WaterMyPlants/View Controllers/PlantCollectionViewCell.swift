@@ -24,7 +24,6 @@ class PlantCollectionViewCell: UICollectionViewCell {
            guard let plant = plant else {return}
            
         plantNameLabel.text = plant.nickName
-       // plantImage.image = UIImage(systemName: "birds.png")
         
        }
 }

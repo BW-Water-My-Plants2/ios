@@ -11,7 +11,7 @@
         <!--Hello-->
         <scene sceneID="dV8-16-ylG">
             <objects>
-                <collectionViewController id="kX4-Cr-upD" customClass="PlantsCollectionViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="kX4-Cr-upD" customClass="PlantsCollectionViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" id="g77-vu-MxI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,14 +24,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlantCell" id="CMC-e7-fO5" customClass="PlantCollectionViewCell" customModule="WaterMyPlants" customModuleProvider="target">
-                                <rect key="frame" x="7" y="50" width="400" height="273"/>
+                                <rect key="frame" x="2" y="50" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LgU-Nm-fpo">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="273"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="410" height="273"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant1" translatesAutoresizingMaskIntoConstraints="NO" id="1Mm-m2-feW">
-                                            <rect key="frame" x="57" y="0.0" width="285" height="227"/>
+                                            <rect key="frame" x="57" y="0.0" width="295" height="227"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Es-WS-42J">
                                             <rect key="frame" x="16" y="238" width="30" height="22"/>
@@ -43,7 +43,7 @@
                                             <state key="normal" image="drop"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW4-SV-lP5">
-                                            <rect key="frame" x="54" y="238" width="338" height="21"/>
+                                            <rect key="frame" x="54" y="238" width="348" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                         <constraint firstItem="fW4-SV-lP5" firstAttribute="top" secondItem="1Mm-m2-feW" secondAttribute="bottom" constant="11" id="yOL-44-dx4"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="400" height="273"/>
+                                <size key="customSize" width="410" height="273"/>
                                 <connections>
                                     <outlet property="plantImage" destination="1Mm-m2-feW" id="Vjq-fu-7OE"/>
                                     <outlet property="plantNameLabel" destination="fW4-SV-lP5" id="avc-tq-dYF"/>
@@ -73,7 +73,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ufv-Va-3W2">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="" id="ufv-Va-3W2">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
@@ -407,7 +407,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-QX-eUz">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-QX-eUz">
                                 <rect key="frame" x="0.0" y="38" width="414" height="318"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="9qm-Oe-Bdp"/>
@@ -419,6 +419,7 @@
                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.55000000000000004"/>
                         <constraints>
                             <constraint firstItem="gKH-QX-eUz" firstAttribute="centerX" secondItem="CWc-WS-r0A" secondAttribute="centerX" id="YLB-Yw-gCT"/>
+                            <constraint firstItem="gKH-QX-eUz" firstAttribute="top" secondItem="wWA-u6-D5f" secondAttribute="top" constant="38" id="fL7-to-cZw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wWA-u6-D5f"/>
                     </view>

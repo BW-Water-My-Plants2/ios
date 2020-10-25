@@ -85,6 +85,10 @@ class PlantsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantCell", for: indexPath) as? PlantCollectionViewCell ?? PlantCollectionViewCell()
         
         cell.plant = plantFRC.object(at: indexPath)
+        cell.contentView.layer.cornerRadius = 12
+        cell.contentView.layer.borderWidth = 1
+        cell.contentView.layer.borderColor = UIColor.systemGray.cgColor
+        cell.contentView.layer.masksToBounds = true
         return cell
     }
     
