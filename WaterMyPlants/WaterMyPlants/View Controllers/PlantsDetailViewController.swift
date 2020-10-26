@@ -32,6 +32,7 @@ class PlantsDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         // Do any additional setup after loading the view.
     }
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
         if editing { wasEdited = true }
@@ -59,7 +60,7 @@ class PlantsDetailViewController: UIViewController {
     func updateViews() {
         guard let plantRep = plantRep else {return}
         
-        plantImage.image = UIImage(systemName: "birds.png")
+        // plantImage.image = UIImage(systemName: "birds.png")
         plantClassLabel.text = plantRep.plantClass
         plantNicknameTextField.text = plantRep.nickName
         plantNicknameTextField.isUserInteractionEnabled = isEditing
@@ -67,7 +68,7 @@ class PlantsDetailViewController: UIViewController {
         plantTypeTextField.isUserInteractionEnabled = isEditing
         plantNotesTextView.text = plantRep.notes
         plantNotesTextView.isUserInteractionEnabled = isEditing
-        plantTimerLabel.text = "\(plantRep.frequency)"
+        plantTimerLabel.text = "\(plantRep.frequency ?? 0)"
     }
     
     // MARK: - IBActions -
@@ -79,25 +80,6 @@ class PlantsDetailViewController: UIViewController {
         present(picker, animated: true)
     }
     
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        guard let nickname = plantNicknameTextField.text, !nickname.isEmpty,
-            let plantType = plantTypeTextField.text, !plantType.isEmpty,
-            let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
-        
-        
-        let plant = Plant(image: "birds", nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
-        plantController.addPlant(plant: plant)
-        
-        //this is not saving
-        
-        do {
-            try CoreDataStack.shared.mainContext.save()
-            navigationController?.popViewController(animated: true)
-        } catch {
-            NSLog("Error saving \(error)")
-        }
-        
-    }
     
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.identifier == "UpdateWaterTimer" {

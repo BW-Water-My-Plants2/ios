@@ -8,6 +8,11 @@
 
 import UIKit
 
+/*
+protocol PlantCellDelegate: class {
+    func didUpdatePlant(plant: Plant)
+}
+
 class PlantCollectionViewCell: UICollectionViewCell {
     
     var plant: Plant? {
@@ -16,14 +21,24 @@ class PlantCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    weak var delegate: PlantCellDelegate?
+    
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantNameLabel: UILabel!
     @IBOutlet weak var waterDropTimer: UIButton!
     
     private func updateViews() {
-           guard let plant = plant else {return}
-           
+        guard let plant = plant else {return}
+        
         plantNameLabel.text = plant.nickName
         
-       }
+        do {
+            try CoreDataStack.shared.mainContext.save()
+            delegate?.didUpdatePlant(plant: plant)
+        } catch {
+            NSLog("Error saving \(error)")
+        }
+        
+    }
 }
+*/

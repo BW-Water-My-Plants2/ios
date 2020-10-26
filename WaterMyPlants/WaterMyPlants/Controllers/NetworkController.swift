@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class PlantController {
     
@@ -36,10 +37,11 @@ class PlantController {
     
     init() {
         getAllPlants()
+        
     }
     
     func getAllPlants(completion: @escaping CompletionHandler = { _ in }) {
-      //  guard let _ = Plant.identifier else { fatalError() }
+        //  guard let _ = Plant.identifier else { fatalError() }
         
         let requestURL = fireURL.appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
@@ -60,6 +62,7 @@ class PlantController {
                 let plantsArray = Array(try JSONDecoder().decode([String: PlantRepresentation].self, from: data).values)
                 self.plants = plantsArray
                 try self.updatePlant(with: plantsArray)
+                print(self.plants.count)
                 completion(.success(true))
             } catch {
                 print("Error decoding plants data: \(error)")
@@ -70,10 +73,53 @@ class PlantController {
         task.resume()
     }
     
-    private func updatePlant(with: [PlantRepresentation]) throws {
-       
+    private func updatePlant(with representations: [PlantRepresentation]) throws {
         
-
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        let identifiersToFetch = representations.compactMap({UUID(uuidString: $0.identifier)})
+        
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
+        
+        var plantsToCreate = representationsByID
+        
+        let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier in %@", identifiersToFetch)
+        
+        //no longer needed  let context = CoreDataStack.shared.mainContext
+        
+        context.performAndWait {
+            
+            do {
+                let currentPlants = try context.fetch(fetchRequest)
+                
+                
+                for plant in currentPlants {
+                    guard let id = plant.identifier,
+                        let representation = representationsByID[id] else {
+                            continue }
+                
+                    plant.nickName = representation.nickName
+                    plant.notes = representation.notes
+                    plant.plantClass = representation.plantClass
+                    plant.frequency = representation.frequency!
+                    
+                    plantsToCreate.removeValue(forKey: id)
+                }
+                
+                //create new task
+                for representation in plantsToCreate.values {
+                    Plant(plantRep: representation, context: context)
+                }
+                
+            } catch {
+                print("Error fetching tasks for UUIDs: \(error)")
+            }
+        }
+        
+        try CoreDataStack.shared.save(context: context)
+        
+        
     }
     
     func addPlant(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {

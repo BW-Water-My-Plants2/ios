@@ -6,21 +6,31 @@
 //  Copyright © 2020 Craig Belinfante. All rights reserved.
 //
 
+/*
 import UIKit
 import CoreData
 import Foundation
 
 class PlantsCollectionViewController: UICollectionViewController {
     
-    private lazy var plantFRC: NSFetchedResultsController<Plant> = {
+    private lazy var plantFRC: [Plant] = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "nickName", ascending: true)]
         let context = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "nickName", cacheName: nil)
         frc.delegate = self
-        try? frc.performFetch()
-        return frc
+        do {
+            _ = try context.fetch(fetchRequest)
+            let plants = try fetchRequest.execute()
+            collectionView.reloadData()
+            return plants
+        } catch {
+            print("\(error)")
+        }
+        
+        return []
     }()
+    
     
     // MARK: - Properties -
     let loginController = LoginController()
@@ -39,7 +49,6 @@ class PlantsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.reloadData()
-        collectionView.register(UINib(nibName: "Header", bundle: nil), forSupplementaryViewOfKind: "Header", withReuseIdentifier: "Header")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,40 +60,22 @@ class PlantsCollectionViewController: UICollectionViewController {
         }
     }
     
-    // MARK: Section Header
-    
-//    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-//
-//    switch kind {
-//
-//    case UICollectionView.elementKindSectionHeader:
-//
-//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath as IndexPath)
-//
-//        headerView.largeContentTitle = "Hello TEST \(user?.username ?? "")"
-//        headerView.backgroundColor = UIColor.blue
-//        return headerView
-//
-//    default:
-//            assert(false, "Unexpected element kind")
-//        }
-//    }
-    
     // MARK: UICollectionViewDataSource
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return plantFRC.sections?.count ?? 2
-    }
+    //    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    //        return plants.count
+    //    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return plantFRC.sections?[section].numberOfObjects ?? 0
+        return plantFRC.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlantCell", for: indexPath) as? PlantCollectionViewCell ?? PlantCollectionViewCell()
         
-        cell.plant = plantFRC.object(at: indexPath)
+        cell.delegate = self
+        cell.plant = plantFRC.object(at: indexPath.item)
         cell.contentView.layer.cornerRadius = 12
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor.systemGray.cgColor
@@ -96,7 +87,7 @@ class PlantsCollectionViewController: UICollectionViewController {
         if segue.identifier == "PlantDetailSegue",
             let detailVC = segue.destination as? PlantsDetailViewController {
             if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                detailVC.plantRep = plantController.plants[indexPath.row]
+                detailVC.plantRep = plantController.plants[indexPath.item]
             }
             detailVC.plantController = plantController
         } else if segue.identifier == "LoginViewModalSegue" {
@@ -226,6 +217,13 @@ extension PlantsCollectionViewController: NSFetchedResultsControllerDelegate {
     
     func performCollectionViewChange(change: UICollectionView) {
     }
+    
 }
-            
-            
+
+extension PlantsCollectionViewController: PlantCellDelegate {
+    func didUpdatePlant(plant: Plant) {
+        plantController.addPlant(plant: plant)
+        collectionView.reloadData()
+    }
+}
+*/
