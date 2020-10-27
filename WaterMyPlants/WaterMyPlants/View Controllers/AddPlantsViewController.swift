@@ -37,7 +37,7 @@ class AddPlantsViewController: UIViewController {
               let plantType = plantTypeTextField.text, !plantType.isEmpty,
               let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
         
-        let image = "\(currentImage!)"
+        let image = "\(String(describing: UIImage(systemName: "birds")))"
         
         let plant = Plant(image: image, nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
         plantController.addPlant(plant: plant)

@@ -62,7 +62,7 @@ class PlantsDetailViewController: UIViewController {
     
     func updateViews() {
         
-        // plantImage.image = UIImage(systemName: "birds.png")
+        plantImage.image = UIImage(systemName: "birds")
         plantClassLabel.text = plants?.plantClass
         plantNicknameTextField.text = plants?.nickName
         plantNicknameTextField.isUserInteractionEnabled = isEditing
