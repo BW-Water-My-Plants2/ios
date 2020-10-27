@@ -49,7 +49,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         strongView.backgroundColor = unusedColor
         passwordTextField.delegate = self
     }
-        
+    
     @IBAction func showHideTapped(_ sender: UIButton) {
         
         let toggled = passwordTextField.isSecureTextEntry
@@ -108,7 +108,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 strongView.backgroundColor = bgColor
                 strengthLabel.text = ""
             case .signIn:
-                    
                 loginController?.signIn(with: user, completion: { (result) in
                     do {
                         let success = try result.get()
@@ -134,12 +133,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            let oldText = passwordTextField.text!
-            let stringRange = Range(range, in: oldText)!
-            let newText = oldText.replacingCharacters(in: stringRange, with: string)
-            updatePassword(newText)
-            return true
-        }
+        let oldText = passwordTextField.text!
+        let stringRange = Range(range, in: oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        updatePassword(newText)
+        return true
+    }
 }
 
 

@@ -32,6 +32,7 @@ class PlantsDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         // Do any additional setup after loading the view.
     }
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
         if editing { wasEdited = true }
@@ -57,14 +58,17 @@ class PlantsDetailViewController: UIViewController {
     
     
     func updateViews() {
-        plantClassLabel.text = plants?.plantClass
-        plantNicknameTextField.text = plants?.nickName
+        guard let plantRep = plantRep else {return}
+        
+        // plantImage.image = UIImage(systemName: "birds.png")
+        plantClassLabel.text = plantRep.plantClass
+        plantNicknameTextField.text = plantRep.nickName
         plantNicknameTextField.isUserInteractionEnabled = isEditing
-        plantTypeTextField.text = plants?.plantClass
+        plantTypeTextField.text = plantRep.plantClass
         plantTypeTextField.isUserInteractionEnabled = isEditing
-        plantNotesTextView.text = plants?.notes
+        plantNotesTextView.text = plantRep.notes
         plantNotesTextView.isUserInteractionEnabled = isEditing
-        plantTimerLabel.text = waterTimer?.selectedTimer
+        plantTimerLabel.text = "\(plantRep.frequency ?? 0)"
     }
     
     // MARK: - IBActions -
@@ -76,36 +80,14 @@ class PlantsDetailViewController: UIViewController {
         present(picker, animated: true)
     }
     
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        guard let nickname = plantNicknameTextField.text, !nickname.isEmpty,
-            let plantType = plantTypeTextField.text, !plantType.isEmpty,
-            let plantNotes = plantNotesTextView.text, !plantNotes.isEmpty else { return }
-        
-        let image = "\(currentImage!)"
-        
-        let plant = Plant(image: image, nickName: nickname, frequency: 1, notes: plantNotes, plantClass: plantType)
-        plantController.addPlant(plant: plant)
-        
-        do {
-            try CoreDataStack.shared.mainContext.save()
-            navigationController?.popViewController(animated: true)
-        } catch {
-            NSLog("Error saving \(error)")
-        }
-        
-    }
     
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddWaterTimerSegue" {
-            guard let timerVC = segue.destination as? WaterTimerViewController else { return }
-            timerVC.delegate = self
-            timerVC.plant = plants
-//            timerVC.popoverPresentationController?.delegate = self
-//            timerVC.presentationController?.delegate = self
-        }
-    }
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "UpdateWaterTimer" {
+             guard let timerVC = segue.destination as? WaterTimerViewController else { return }
+             timerVC.popoverPresentationController?.delegate = self
+             timerVC.presentationController?.delegate = self
+         }
+     }
 }
 
 extension PlantsDetailViewController: UIPopoverPresentationControllerDelegate {
@@ -130,7 +112,6 @@ extension PlantsDetailViewController: UIImagePickerControllerDelegate, UINavigat
 extension PlantsDetailViewController: WaterTimerPickedDelegate {
     func plantTimer(date: Date) {
         
-    }
-    
+    }    
     
 }
