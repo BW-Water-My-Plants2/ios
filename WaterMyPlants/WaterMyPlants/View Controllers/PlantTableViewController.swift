@@ -94,8 +94,8 @@ class PlantTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlantDetailSegue",
             let detailVC = segue.destination as? PlantsDetailViewController {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                detailVC.plantRep = plantController.plants[indexPath.item]
+            if let index = self.tableView.indexPathForSelectedRow {
+                detailVC.plants = fetchedResultsController.object(at: index)
             }
             detailVC.plantController = plantController
         } else if segue.identifier == "LoginViewModalSegue" {
