@@ -23,14 +23,13 @@ class PlantsDetailViewController: UIViewController {
     var currentImage: UIImage!
     var plantController = PlantController()
     var wasEdited = false
-    var plantRep: PlantRepresentation?
+    //var plantRep: PlantRepresentation?
     var waterTimer: WaterTimerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
         navigationItem.rightBarButtonItem = editButtonItem
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -39,36 +38,39 @@ class PlantsDetailViewController: UIViewController {
         plantNicknameTextField.isUserInteractionEnabled = editing
         plantTypeTextField.isUserInteractionEnabled = editing
         plantNotesTextView.isUserInteractionEnabled = editing
+        navigationItem.hidesBackButton = editing
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if wasEdited {
-            guard let nickName = plantNicknameTextField.text, !nickName.isEmpty,
-                  let plant = plants else { return }
+            guard let nickName = plantNicknameTextField.text, !nickName.isEmpty, let notes = plantNotesTextView.text, !notes.isEmpty, let plantClass = plantTypeTextField.text, !plantClass.isEmpty, let plant = plants else { return }
             
-            let notes = plantNotesTextView.text
-            let plantClass = plantTypeTextField.text
             plant.nickName = nickName
             plant.notes = notes
             plant.plantClass = plantClass
             
+            plantController.addPlant(plant: plant)
+            do {
+                try CoreDataStack.shared.mainContext.save()
+            } catch {
+                NSLog("Error saving")
+            }
         }
     }
     
     
     func updateViews() {
-        guard let plantRep = plantRep else {return}
         
-        // plantImage.image = UIImage(systemName: "birds.png")
-        plantClassLabel.text = plantRep.plantClass
-        plantNicknameTextField.text = plantRep.nickName
+        plantImage.image = UIImage(systemName: "birds")
+        plantClassLabel.text = plants?.plantClass
+        plantNicknameTextField.text = plants?.nickName
         plantNicknameTextField.isUserInteractionEnabled = isEditing
-        plantTypeTextField.text = plantRep.plantClass
+        plantTypeTextField.text = plants?.plantClass
         plantTypeTextField.isUserInteractionEnabled = isEditing
-        plantNotesTextView.text = plantRep.notes
+        plantNotesTextView.text = plants?.notes
         plantNotesTextView.isUserInteractionEnabled = isEditing
-        plantTimerLabel.text = "\(plantRep.frequency ?? 0)"
+        plantTimerLabel.text = "\(plants?.frequency ?? 0)"
     }
     
     // MARK: - IBActions -
@@ -81,13 +83,13 @@ class PlantsDetailViewController: UIViewController {
     }
     
     
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.identifier == "UpdateWaterTimer" {
-             guard let timerVC = segue.destination as? WaterTimerViewController else { return }
-             timerVC.popoverPresentationController?.delegate = self
-             timerVC.presentationController?.delegate = self
-         }
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UpdateWaterTimer" {
+            guard let timerVC = segue.destination as? WaterTimerViewController else { return }
+            timerVC.popoverPresentationController?.delegate = self
+            timerVC.presentationController?.delegate = self
+        }
+    }
 }
 
 extension PlantsDetailViewController: UIPopoverPresentationControllerDelegate {

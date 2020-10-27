@@ -9,15 +9,22 @@
 import XCTest
 
 class WaterMyPlantsUITests: XCTestCase {
-
+    
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
-
+    
     func testExample() throws {
         
+        
     }
-
+    
+//    func testAddButton() {
+//        let app = XCUIApplication()
+//        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeDown()
+//        app.navigationBars["Welcome"].buttons["Add"].tap()
+//    }
+    
 }
 //let app = XCUIApplication()
 //app.launch()

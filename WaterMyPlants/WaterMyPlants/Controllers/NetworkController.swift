@@ -37,7 +37,6 @@ class PlantController {
     
     init() {
         getAllPlants()
-        
     }
     
     func getAllPlants(completion: @escaping CompletionHandler = { _ in }) {
